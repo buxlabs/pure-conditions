@@ -1,0 +1,24 @@
+{
+  "name": "pure-conditions",
+  "version": "0.1.0",
+  "description": "Utility methods for simple conditions",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/buxlabs/pure-conditions.git"
+  },
+  "keywords": [
+    "pure",
+    "utilities",
+    "javascript"
+  ],
+  "author": "Przemysław Konieczniak <przemyslaw.konieczniak@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/buxlabs/pure-conditions/issues"
+  },
+  "homepage": "https://github.com/buxlabs/pure-conditions#readme"
+}
