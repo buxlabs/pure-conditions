@@ -21,6 +21,8 @@ const {
   isDecimal,
   isNumeric,
   isString,
+  isBoolean,
+  isArray,
   isSymbol,
   isMap,
   isWeakMap,
@@ -153,6 +155,15 @@ equal(isSet([1, 2, 3]), false)
 
 equal(isWeakSet(new WeakSet()), true)
 equal(isWeakSet(new Set([1, 2, 3])), false)
+
+equal(isBoolean(true), true)
+equal(isBoolean(false), true)
+equal(isBoolean(new Boolean), true)
+equal(isBoolean(0), false)
+
+equal(isArray([]), true)
+equal(isArray({}), false)
+equal(isArray(''), false)
 
 equal(isDate(new Date()), true)
 equal(isDate('2018/05/05'), false)

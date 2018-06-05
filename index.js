@@ -68,6 +68,12 @@ module.exports = {
   isString(value) {
     return Object.prototype.toString.call(value) === '[object String]'
   },
+  isBoolean(value) {
+    return Object.prototype.toString.call(value) === '[object Boolean]'
+  },
+  isArray(value) {
+    return Array.isArray(value)
+  },
   isSymbol(value) {
     return Object.prototype.toString.call(value) === '[object Symbol]'
   },
