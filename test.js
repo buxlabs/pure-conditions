@@ -36,7 +36,8 @@ const {
   hasNumber,
   hasNumbers,
   isPrime,
-  isPalindrome
+  isPalindrome,
+  isEmail
 } = require('.')
 
 equal(isPositive(1), true)
@@ -229,3 +230,5 @@ equal(isPrime(77), false)
 equal(isPalindrome('Devil lived'), true)
 equal(isPalindrome('madam'), true)
 equal(isPalindrome('foo bar'), false)
+equal(isEmail('as@ts.eu'), true)
+equal(isEmail('asts.eu'), false)
