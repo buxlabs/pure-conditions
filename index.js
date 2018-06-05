@@ -96,7 +96,7 @@ module.exports = {
     return /\s|&nbsp;/g.test(value)
   },
   hasNewLine(value) {
-    return /\n|\t/g.test(value)
+    return /\n/g.test(value)
   },
   hasNumber(value) {
     return Object.values(value).some(value => typeof value === 'number')

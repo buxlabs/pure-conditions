@@ -192,7 +192,7 @@ equal(hasWhitespace('&nbsp;'), true)
 equal(hasWhitespace('foobar'), false)
 
 equal(hasNewLine('foo\nbar'), true)
-equal(hasNewLine('foo\tbar'), true)
+equal(hasNewLine('foo\tbar'), false)
 equal(hasNewLine('foobar'), false)
 
 equal(hasNumber([1, 2, 3]), true)
