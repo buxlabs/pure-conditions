@@ -38,6 +38,8 @@ const {
   isPrime,
   isPalindrome,
   isEmail
+  isUrl,
+  haveMany
 } = require('.')
 
 equal(isPositive(1), true)
@@ -210,7 +212,7 @@ equal(hasNewLine('foobar'), false)
 equal(hasNumber([1, 2, 3]), true)
 equal(hasNumber([1]), true)
 equal(hasNumber({ foo: 1, bar: 'baz' }), true)
-equal(hasNumber(3), false)
+equal(hasNumber(3), true)
 equal(hasNumber('foobar'), false)
 
 equal(hasNumbers([1, 2, 3]), true)
@@ -230,5 +232,13 @@ equal(isPrime(77), false)
 equal(isPalindrome('Devil lived'), true)
 equal(isPalindrome('madam'), true)
 equal(isPalindrome('foo bar'), false)
+
 equal(isEmail('as@ts.eu'), true)
 equal(isEmail('asts.eu'), false)
+
+equal(isUrl('https://buxlabs.pl/narzędzia/js'), true)
+
+equal(haveMany([1, 2, 3]), true)
+equal(haveMany('foobar'), true)
+equal(haveMany([1]), false)
+equal(haveMany('f'), false)

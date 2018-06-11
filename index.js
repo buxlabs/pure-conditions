@@ -105,10 +105,10 @@ module.exports = {
     return /\n/g.test(value)
   },
   hasNumber(value) {
-    return Object.values(value).some(value => typeof value === 'number')
+    return typeof value === 'number' ? true : Object.values(value).some(element => typeof element === 'number')
   },
   hasNumbers(value) {
-    return Object.values(value).filter(value => typeof value === 'number').length > 1
+    return Object.values(value).filter(element => typeof element === 'number').length > 1
   },
   isPrime(value) {
     if (value === 1) return false
@@ -121,5 +121,12 @@ module.exports = {
   },
   isEmail(value) {
     return /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/.test(value)
+  }
+  isUrl(value) {
+   const regExp = /((([A-Za-z]{3,9}:(?:\/\/)?)(?:[\-;:&=\+\$,\w]+@)?[A-Za-z0-9\.\-]+|(?:www\.|[\-;:&=\+\$,\w]+@)[A-Za-z0-9\.\-]+)((?:\/[\+~%\/\.\w\-_]*)?\??(?:[\-\+=&;%@\.\w_]*)#?(?:[\.\!\/\\\w]*))?)/
+   return regExp.test(value)
+  },
+  haveMany(value) {
+    return value.length > 1
   }
 }
