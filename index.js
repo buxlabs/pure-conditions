@@ -121,7 +121,7 @@ module.exports = {
   },
   isEmail(value) {
     return /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/.test(value)
-  }
+  },
   isUrl(value) {
    const regExp = /((([A-Za-z]{3,9}:(?:\/\/)?)(?:[\-;:&=\+\$,\w]+@)?[A-Za-z0-9\.\-]+|(?:www\.|[\-;:&=\+\$,\w]+@)[A-Za-z0-9\.\-]+)((?:\/[\+~%\/\.\w\-_]*)?\??(?:[\-\+=&;%@\.\w_]*)#?(?:[\.\!\/\\\w]*))?)/
    return regExp.test(value)
