@@ -40,7 +40,36 @@ const {
   isEmail,
   isUrl,
   haveMany,
-  isMultiple
+  isMultiple,
+  isDivisible,
+  isSoonerThan,
+  isLaterThan,
+  respondsTo,
+  startsWith,
+  endsWith,
+  isAlternative,
+  isExclusiveAlternative,
+  isConjunction,
+  isEquals,
+  notEqual,
+  isGreaterThanOrEqual,
+  includes,
+  matches,
+  isBitwiseAlternative,
+  isBitwiseConjunction,
+  isBitwiseAlternativeNegation,
+  isBitwiseNegation,
+  haveMoreThan,
+  have,
+  haveLessThan,
+  isBetween,
+  isLessThan,
+  isGreaterThan,
+  isLessThanOrEqual,
+  hasLengthOf,
+  hasLengthOfAtLeast,
+  hasLengthOfAtMost,
+  isIn
 } = require('.')
 
 equal(isPositive(1), true)
@@ -243,3 +272,113 @@ equal(haveMany([1, 2, 3]), true)
 equal(haveMany('foobar'), true)
 equal(haveMany([1]), false)
 equal(haveMany('f'), false)
+
+equal(isMultiple(100, 10), true)
+equal(isMultiple(25, 3), false)
+equal(isMultiple(0, 3), true)
+
+equal(isDivisible(10, 5), true)
+equal(isDivisible(64, 6), false)
+
+equal(isSoonerThan(new Date(2018, 4, 1), new Date(2018, 4, 11)), true)
+equal(isSoonerThan(new Date(2018, 4, 11), new Date(2018, 4, 1)), false)
+
+equal(isLaterThan(new Date(2018, 4, 11), new Date(2018, 4, 1)), true)
+equal(isLaterThan(new Date(2018, 4, 1), new Date(2018, 4, 11)), false)
+
+equal(startsWith('ban qux', 'ban'), true)
+equal(startsWith('ban qux', 'qux'), false)
+
+equal(endsWith('ban qux', 'qux'), true)
+equal(endsWith('ban qux', 'ban'), false)
+
+equal(isAlternative(1, 1), true)
+equal(isAlternative(1, 0), true)
+equal(isAlternative(0, 1), true)
+equal(isAlternative(0, 0), false)
+equal(isAlternative('', ''), false)
+
+equal(isConjunction(1, 1), true)
+equal(isConjunction(1, 0), false)
+equal(isConjunction(0, 1), false)
+equal(isConjunction(0, 0), false)
+equal(isConjunction('', ''), false)
+
+equal(isExclusiveAlternative(false, true), true)
+equal(isExclusiveAlternative(true, false), true)
+equal(isExclusiveAlternative(true, true), false)
+equal(isExclusiveAlternative(false, false), false)
+
+equal(isEquals(42, 42), true)
+equal(isEquals('foo', 'foo'), true)
+equal(isEquals('qux', 'foo'), false)
+equal(isEquals(42, '42'), false)
+
+equal(notEqual('qux', 'foo'), true)
+equal(notEqual(42, '42'), true)
+equal(notEqual(42, 42), false)
+equal(notEqual('foo', 'foo'), false)
+
+equal(isGreaterThanOrEqual(42, 42), true)
+equal(isGreaterThanOrEqual(100, 42), true)
+equal(isGreaterThanOrEqual(30, 42), false)
+
+equal(isLessThanOrEqual(30, 42), true)
+equal(isLessThanOrEqual(42, 42), true)
+equal(isLessThanOrEqual(100, 42), false)
+
+equal(isLessThan(30, 42), true)
+equal(isLessThan(30, 30), false)
+equal(isLessThan(50, 30), false)
+
+equal(isGreaterThan(50, 30), true)
+equal(isGreaterThan(30, 30), false)
+equal(isGreaterThan(30, 42), false)
+
+equal(includes('lorem ipsum', 'lorem'), true)
+equal(includes('lorem ipsum', 'dolor'), false)
+
+equal(matches('lorem ipsum', /ipsum/), true)
+equal(matches('lorem ipsum', /dolor/), false)
+
+equal(isBitwiseAlternative(1, 1), true)
+equal(isBitwiseAlternative(1, 0), true)
+equal(isBitwiseAlternative(0, 1), true)
+equal(isBitwiseAlternative(0, 0), false)
+
+equal(isBitwiseConjunction(1, 1), true)
+equal(isBitwiseConjunction(0, 0), false)
+
+equal(isBitwiseAlternativeNegation(1, 0), true)
+equal(isBitwiseAlternativeNegation(0, 1), true)
+equal(isBitwiseAlternativeNegation(1, 1), false)
+equal(isBitwiseAlternativeNegation(0, 0), false)
+
+equal(haveMoreThan([1, 2, 3, 4, 5], 2), true)
+equal(haveMoreThan([1, 2, 3, 4, 5], 1), true)
+equal(haveMoreThan([1, 2, 3, 4, 5], 5), false)
+equal(haveMoreThan([1, 2, 3, 4, 5], 6), false)
+
+equal(have([1, 2, 3, 4, 5], 5), true)
+equal(have([], 0), true)
+equal(have([1, 2, 3, 4, 5], 3), false)
+
+equal(haveLessThan([1, 2, 3, 4, 5], 10), true)
+equal(haveLessThan([1, 2, 3, 4, 5], 6), true)
+equal(haveLessThan([1, 2, 3, 4, 5], 5), false)
+
+equal(isBetween(10, 10, 15), true)
+equal(isBetween(15, 10, 15), true)
+equal(isBetween(100, 10, 15), false)
+equal(isBetween(5, 10, 15), false)
+
+equal(hasLengthOf([1, 2, 3, 4, 5], 5), true)
+equal(hasLengthOf("foo", 3), true)
+equal(hasLengthOf([1, 2, 3, 4, 5], 10), false)
+equal(hasLengthOf('foobar', true), false)
+
+// equal(hasLengthOfAtLeast(), )
+// equal(hasLengthOfAtMost(), )
+// equal(isIn(), )
+// equal(isBitwiseNegation(), )
+// equal(respondsTo({}), )

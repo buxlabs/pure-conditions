@@ -129,34 +129,90 @@ module.exports = {
   haveMany(value) {
     return value.length > 1
   },
-  isMultiple(value1, value2) {},
-  isDivisible(value1, value2) {},
-  isSoonerThan(value1, value2) {},
-  isLaterThan(value1, value2) {},
+  isMultiple(value1, value2) {
+    return value1 % value2 === 0
+  },
+  isDivisible(value1, value2) {
+    return value1 % value2 === 0
+  },
+  isSoonerThan(value1, value2) {
+    return value1 < value2
+  },
+  isLaterThan(value1, value2) {
+    return value1 > value2
+  },
   respondsTo(value1, value2) {},
-  startsWith(value1, value2) {},
-  endsWith(value1, value2) {},
-  isAlternative(value1, value2) {},
-  isExclusiveAlternative(value1, value2) {},
-  isConjunction(value1, value2) {},
-  isEquals(value1, value2) {},
-  notEqual(value1, value2) {},
-  isGreaterThanOrEqual(value1, value2) {},
-  includes(value1, value2) {},
-  matches(value1, value2) {},
-  isBitwiseAlternative(value1, value2) {},
-  isBitwiseConjunction(value1, value2) {},
-  isBitwiseAlternativeNegation(value1, value2) {},
-  isBitwiseNegation(value1, value2) {},
-  haveMoreThan(value1, value2) {},
-  have(value1, value2) {},
-  haveLessThan(value1, value2) {},
-  isBetween(value1, value2, value3) {},
-  isLessThan(value1, value2) {},
-  isGreaterThan(value1, value2) {},
-  isLessThanOrEqual(value1, value2) {},
-  hasLengthOf(value1, value2) {},
-  hasLengthOfAtLeast(value1, value2) {},
-  hasLengthOfAtMost(value1, value2) {},
+  startsWith(value1, value2) {
+    return value1.startsWith(value2)
+  },
+  endsWith(value1, value2) {
+    return value1.endsWith(value2)
+  },
+  isAlternative(value1, value2) {
+    return !!(value1 || value2)
+  },
+  isExclusiveAlternative(value1, value2) {
+    return !!((value1 && !value2) || (!value1 && value2))
+  },
+  isConjunction(value1, value2) {
+    return !!(value1 && value2)
+  },
+  isEquals(value1, value2) {
+    return value1 === value2
+  },
+  notEqual(value1, value2) {
+    return value1 !== value2
+  },
+  isGreaterThanOrEqual(value1, value2) {
+    return value1 >= value2
+  },
+  includes(value1, value2) {
+    return value1.includes(value2)
+  },
+  matches(value1, value2) {
+    return !!value1.match(value2)
+  },
+  isBitwiseAlternative(value1, value2) {
+    return !!(value1 | value2)
+  },
+  isBitwiseConjunction(value1, value2) {
+    return !!(value1 & value2)
+  },
+  isBitwiseAlternativeNegation(value1, value2) {
+    return !!((value1 && !value2) || (!value1 && value2))
+  },
+  // isBitwiseNegation(value1, value2) {
+
+  // },
+  haveMoreThan(value1, value2) {
+    return value1.length > value2
+  },
+  have(value1, value2) {
+    return value1.length === value2
+  },
+  haveLessThan(value1, value2) {
+    return value1.length < value2
+  },
+  isBetween(value1, value2, value3) {
+    return value1 >= value2 && value1 <= value3
+  },
+  isLessThan(value1, value2) {
+    return value1 < value2
+  },
+  isGreaterThan(value1, value2) {
+    return value1 > value2
+  },
+  isLessThanOrEqual(value1, value2) {
+    return value1 <= value2
+  },
+  hasLengthOf(value1, value2) {
+    return value1.length === value2
+  },
+  hasLengthOfAtLeast(value1, value2) {
+    return value1.length >= value2
+  },
+  hasLengthOfAtMost(value1, value2) {
+    return value1.length <= value2
+  },
   isIn(value1, value2) {}
 }
