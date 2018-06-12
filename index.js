@@ -217,6 +217,6 @@ module.exports = {
     return value1.length <= value2
   },
   isIn(value1, value2) {
-    return value1.includes(value2)
+    return value2.includes(value1)
   }
 }
