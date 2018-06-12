@@ -37,9 +37,10 @@ const {
   hasNumbers,
   isPrime,
   isPalindrome,
-  isEmail
+  isEmail,
   isUrl,
-  haveMany
+  haveMany,
+  isMultiple
 } = require('.')
 
 equal(isPositive(1), true)
