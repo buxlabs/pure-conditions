@@ -377,8 +377,21 @@ equal(hasLengthOf("foo", 3), true)
 equal(hasLengthOf([1, 2, 3, 4, 5], 10), false)
 equal(hasLengthOf('foobar', true), false)
 
-// equal(hasLengthOfAtLeast(), )
-// equal(hasLengthOfAtMost(), )
-// equal(isIn(), )
-// equal(isBitwiseNegation(), )
-// equal(respondsTo({}), )
+equal(hasLengthOfAtLeast([1, 2, 3, 4, 5], 3), true)
+equal(hasLengthOfAtLeast([1, 2, 3, 4, 5], 5), true)
+equal(hasLengthOfAtLeast([1, 2, 3, 4, 5], 10), false)
+
+equal(hasLengthOfAtMost([1, 2, 3, 4, 5], 10), true)
+equal(hasLengthOfAtMost([1, 2, 3, 4, 5], 5), true)
+equal(hasLengthOfAtMost([1, 2, 3, 4, 5], 3), false)
+
+equal(isBitwiseNegation(0), true)
+equal(isBitwiseNegation(5), true)
+
+equal(isIn([1, 2 ,3, 4], 3), true)
+equal(isIn('12345', '5'), true)
+equal(isIn('12345', '10'), false)
+equal(isIn([1, 2, 3, 4], 5), false)
+
+equal(respondsTo({ bar () {} }, 'bar'), true)
+equal(respondsTo({ bar: 'baz' }, 'bar'), false)

@@ -141,7 +141,9 @@ module.exports = {
   isLaterThan(value1, value2) {
     return value1 > value2
   },
-  respondsTo(value1, value2) {},
+  respondsTo(value1, value2) {
+    return value1[value2] && typeof value1[value2] === 'function'
+  },
   startsWith(value1, value2) {
     return value1.startsWith(value2)
   },
@@ -181,9 +183,9 @@ module.exports = {
   isBitwiseAlternativeNegation(value1, value2) {
     return !!((value1 && !value2) || (!value1 && value2))
   },
-  // isBitwiseNegation(value1, value2) {
-
-  // },
+  isBitwiseNegation(value) {
+    return !!(~value)
+  },
   haveMoreThan(value1, value2) {
     return value1.length > value2
   },
@@ -214,5 +216,7 @@ module.exports = {
   hasLengthOfAtMost(value1, value2) {
     return value1.length <= value2
   },
-  isIn(value1, value2) {}
+  isIn(value1, value2) {
+    return value1.includes(value2)
+  }
 }
