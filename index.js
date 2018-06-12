@@ -190,7 +190,7 @@ module.exports = {
     return value1.length > value2
   },
   have(value1, value2) {
-    return value1.length === value2
+    return !value2 && value1.length > 0 || value1.length === value2
   },
   haveLessThan(value1, value2) {
     return value1.length < value2
