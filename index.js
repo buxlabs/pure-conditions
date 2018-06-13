@@ -333,5 +333,14 @@ module.exports = {
       '.bmp'
     ]
     return extensions.includes(value.substr(value.lastIndexOf('.')))
+  },
+  isEmptyArray(value) {
+    return !value.length
+  },
+  isEmptyObject(value) {
+   return !Object.keys(value).length
+  },
+  isEmptySet(value) {
+   return !value.size
   }
 }

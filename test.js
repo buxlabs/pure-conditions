@@ -73,7 +73,10 @@ const {
   hasExtension,
   isAudio,
   isVideo,
-  isImage
+  isImage,
+  isEmptyArray,
+  isEmptyObject,
+  isEmptySet
 } = require('.')
 
 equal(isPositive(1), true)
@@ -420,3 +423,17 @@ equal(isImage('tagged-image-file-format.tiff'), true)
 equal(isImage('git.gif'), true)
 equal(isImage('good_quality.flac'), false)
 equal(isImage('file.pdf'), false)
+
+equal(isEmptyArray([]), true)
+equal(isEmptyArray(''), true)
+equal(isEmptyArray([1, 2]), false)
+equal(isEmptyArray('foo'), false)
+
+equal(isEmptyObject({}), true)
+equal(isEmptyObject({ foo () {} , bar: ''}), false)
+equal(isEmptyObject({ foo: undefined }), false)
+
+equal(isEmptySet(new Set([])), true)
+equal(isEmptySet(new Set([1, 2, 3, 4, 5])), false)
+equal(isEmptySet(new Map([])), true)
+equal(isEmptySet(new Map([ ['foo', 1] ])), false)
