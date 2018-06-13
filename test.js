@@ -70,7 +70,8 @@ const {
   hasLengthOfAtLeast,
   hasLengthOfAtMost,
   isIn,
-  hasExtension
+  hasExtension,
+  isAudio
 } = require('.')
 
 equal(isPositive(1), true)
@@ -400,3 +401,8 @@ equal(hasExtension('src/documents/document.doc','doc'), true)
 equal(hasExtension('file.txt', 'jpg'), false)
 equal(hasExtension('filetxt', 'txt'), false)
 equal(hasExtension('file.txt'), false)
+
+equal(isAudio('song.mp3'), true)
+equal(isAudio('good_quality.flac'), true)
+equal(isAudio('video.avi'), false)
+equal(isAudio('document.txt'), false)
