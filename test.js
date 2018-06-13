@@ -72,7 +72,8 @@ const {
   isIn,
   hasExtension,
   isAudio,
-  isVideo
+  isVideo,
+  isImage
 } = require('.')
 
 equal(isPositive(1), true)
@@ -409,7 +410,13 @@ equal(isAudio('video.avi'), false)
 equal(isAudio('document.txt'), false)
 
 equal(isVideo('video.mkv'), true)
-equal(isVideo('funny_gif_with_cuteCaT.gif'), true)
+equal(isVideo('funny_gif_with_cuteCaT.gif'), false)
 equal(isVideo('moving_picture_group.mpeg'), true)
 equal(isVideo('good_quality.flac'), false)
-equal(hasExtension('file.txt'), false)
+equal(isVideo('file.txt'), false)
+
+equal(isImage('image.png'), true)
+equal(isImage('tagged-image-file-format.tiff'), true)
+equal(isImage('git.gif'), true)
+equal(isImage('good_quality.flac'), false)
+equal(isImage('file.pdf'), false)

@@ -277,7 +277,6 @@ module.exports = {
       '.ogv',
       '.ogg',
       '.drc',
-      '.gif',
       '.gifv',
       '.mng',
       '.avi',
@@ -311,6 +310,27 @@ module.exports = {
       '.f4p',
       '.f4a',
       '.f4b'
+    ]
+    return extensions.includes(value.substr(value.lastIndexOf('.')))
+  },
+  isImage(value) {
+    const extensions = [
+      '.tif',
+      '.tiff',
+      '.gif',
+      '.jpeg',
+      '.jpg',
+      '.jif',
+      '.jfif',
+      '.jp2',
+      '.jpx',
+      '.j2k',
+      '.j2c',
+      '.fpx',
+      '.pcd',
+      '.png',
+      '.svg',
+      '.bmp'
     ]
     return extensions.includes(value.substr(value.lastIndexOf('.')))
   }
