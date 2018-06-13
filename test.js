@@ -71,7 +71,8 @@ const {
   hasLengthOfAtMost,
   isIn,
   hasExtension,
-  isAudio
+  isAudio,
+  isVideo
 } = require('.')
 
 equal(isPositive(1), true)
@@ -406,3 +407,9 @@ equal(isAudio('song.mp3'), true)
 equal(isAudio('good_quality.flac'), true)
 equal(isAudio('video.avi'), false)
 equal(isAudio('document.txt'), false)
+
+equal(isVideo('video.mkv'), true)
+equal(isVideo('funny_gif_with_cuteCaT.gif'), true)
+equal(isVideo('moving_picture_group.mpeg'), true)
+equal(isVideo('good_quality.flac'), false)
+equal(hasExtension('file.txt'), false)
