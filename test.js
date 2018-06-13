@@ -69,7 +69,8 @@ const {
   hasLengthOf,
   hasLengthOfAtLeast,
   hasLengthOfAtMost,
-  isIn
+  isIn,
+  hasExtension
 } = require('.')
 
 equal(isPositive(1), true)
@@ -393,5 +394,8 @@ equal(isIn('5', '12345'), true)
 equal(isIn('10', '12345'), false)
 equal(isIn(5, [1, 2, 3, 4]), false)
 
-equal(respondsTo({ bar () {} }, 'bar'), true)
-equal(respondsTo({ bar: 'baz' }, 'bar'), false)
+equal(hasExtension('file.jpg','jpg'), true)
+equal(hasExtension('file.ogg','ogg'), true)
+equal(hasExtension('src/documents/document.doc','doc'), true)
+equal(hasExtension('file.txt', 'jpg'), false)
+equal(hasExtension('file.txt'), false)

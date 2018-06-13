@@ -218,5 +218,8 @@ module.exports = {
   },
   isIn(value1, value2) {
     return value2.includes(value1)
+  },
+  hasExtension(value1, value2) {
+    return value1.endsWith(value2)
   }
 }
