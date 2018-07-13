@@ -349,7 +349,7 @@ module.exports = {
     value = value.replace(/\s/g, '')
     if (!value) return false
 
-    const regExp = /^(\+?\(?\d{1,3}\)?)?(\d{3}-?){3}/
+    const regExp = /^(\+?\(?\d{1,3}\)?)?(\d{3}-?){3}$/
     return regExp.test(value)
   }
 }
