@@ -273,6 +273,11 @@ equal(isPalindrome('foo bar'), false)
 
 equal(isEmail('as@ts.eu'), true)
 equal(isEmail('asts.eu'), false)
+equal(isEmail('simple@example.com'), true)
+equal(isEmail('john.nowak@gmail.com'), true)
+equal(isEmail('Abc.example.com'), false)
+equal(isEmail('A@b@c@example.com'), false)
+equal(isEmail('john..doe@example.com'), false)
 
 equal(isUrl('https://buxlabs.pl/narzędzia/js'), true)
 
