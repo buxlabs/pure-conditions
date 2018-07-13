@@ -76,7 +76,8 @@ const {
   isImage,
   isEmptyArray,
   isEmptyObject,
-  isEmptySet
+  isEmptySet,
+  isPhone
 } = require('.')
 
 equal(isPositive(1), true)
@@ -437,3 +438,9 @@ equal(isEmptySet(new Set([])), true)
 equal(isEmptySet(new Set([1, 2, 3, 4, 5])), false)
 equal(isEmptySet(new Map([])), true)
 equal(isEmptySet(new Map([ ['foo', 1] ])), false)
+
+equal(isPhone(''), false)
+equal(isPhone('123 345 678'), true)
+equal(isPhone('+48 123 345 678'), true)
+equal(isPhone('123-321-333'), true)
+equal(isPhone('32 267 70 41'), true)
