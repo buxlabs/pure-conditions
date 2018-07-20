@@ -1,15 +1,15 @@
 module.exports = {
-  isPositive(value) {
-    return value > 0
+  isPositive(number) {
+    return number > 0
   },
-  isNegative(value) {
-    return value < 0
+  isNegative(number) {
+    return number < 0
   },
-  isFinite(value) {
-    return isFinite(value)
+  isFinite(number) {
+    return isFinite(number)
   },
-  isInfinite(value) {
-    return value === Number.POSITIVE_INFINITY || value === Number.NEGATIVE_INFINITY
+  isInfinite(number) {
+    return number === Number.POSITIVE_INFINITY || number === Number.NEGATIVE_INFINITY
   },
   isPresent(value) {
     return value !== void 0
@@ -20,11 +20,11 @@ module.exports = {
   isNull(value) {
     return value === null
   },
-  isEven(value) {
-    return value % 2 === 0
+  isEven(number) {
+    return number % 2 === 0
   },
-  isOdd(value) {
-    return value % 2 !== 0
+  isOdd(number) {
+    return number % 2 !== 0
   },
   isEmpty(value) {
     const type = Object.prototype.toString.call(value).substr(8).replace(']', '')
@@ -33,21 +33,21 @@ module.exports = {
       (type === 'Set' || type === 'Map') && value.size === 0 ||
       (type === 'Object' || type === 'Function') && Object.keys(value).length === 0
   },
-  isAlpha(value) {
-    return [...value].every(char => /[A-Za-z]/.test(char))
+  isAlpha(string) {
+    return [...string].every(char => /[A-Za-z]/.test(char))
   },
-  isAlphaNumeric(value) {
-    return [...value].every(char => /[A-Za-z0-9]/.test(char))
+  isAlphaNumeric(string) {
+    return [...string].every(char => /[A-Za-z0-9]/.test(char))
   },
   isObject(value){
     const type = typeof value
     return (type === 'function' || type === 'object') && !!value
   },
-  isFrozen(value) {
-    return Object.isFrozen(value)
+  isFrozen(object) {
+    return Object.isFrozen(object)
   },
-  isSealed(value) {
-    return Object.isSealed(value)
+  isSealed(object) {
+    return Object.isSealed(object)
   },
   isRegExp(value) {
     return Object.prototype.toString.call(value) === '[object RegExp]'
@@ -98,11 +98,11 @@ module.exports = {
   isFalsy(value) {
     return !value
   },
-  hasWhitespace(value) {
-    return /\s|&nbsp;/g.test(value)
+  hasWhitespace(string) {
+    return /\s|&nbsp;/g.test(string)
   },
-  hasNewLine(value) {
-    return /\n/g.test(value)
+  hasNewLine(string) {
+    return /\n/g.test(string)
   },
   hasNumber(value) {
     return typeof value === 'number' ? true : Object.values(value).some(element => typeof element === 'number')
@@ -113,47 +113,47 @@ module.exports = {
   hasDuplicates(value) {
     return new Set(value).size !== value.length
   },
-  isPrime(value) {
-    if (value === 1) return false
-    for (let i = 2; i < value; i++) if (value % i === 0) return false
+  isPrime(number) {
+    if (number === 1) return false
+    for (let i = 2; i < number; i++) if (number % i === 0) return false
     return true
   },
-  isPalindrome(value) {
-    value = value.toLowerCase()
-    return value.split('').reverse().join('') === value
+  isPalindrome(string) {
+    string = string.toLowerCase()
+    return string.split('').reverse().join('') === string
   },
-  isEmail(value) {
-    value = value.toLowerCase()
+  isEmail(string) {
+    string = string.toLowerCase()
     const regExp = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-    return regExp.test(value)
+    return regExp.test(string)
   },
-  isUrl(value) {
+  isUrl(string) {
    const regExp = /((([A-Za-z]{3,9}:(?:\/\/)?)(?:[\-;:&=\+\$,\w]+@)?[A-Za-z0-9\.\-]+|(?:www\.|[\-;:&=\+\$,\w]+@)[A-Za-z0-9\.\-]+)((?:\/[\+~%\/\.\w\-_]*)?\??(?:[\-\+=&;%@\.\w_]*)#?(?:[\.\!\/\\\w]*))?)/
-   return regExp.test(value)
+   return regExp.test(string)
   },
   haveMany(value) {
     return value.length > 1
   },
-  isMultiple(value1, value2) {
-    return value1 % value2 === 0
+  isMultiple(number1, number2) {
+    return number1 % number2 === 0
   },
-  isDivisible(value1, value2) {
-    return value1 % value2 === 0
+  isDivisible(number1, number2) {
+    return number1 % number2 === 0
   },
-  isSoonerThan(value1, value2) {
-    return value1 < value2
+  isSoonerThan(date1, date2) {
+    return date1 < date2
   },
-  isLaterThan(value1, value2) {
-    return value1 > value2
+  isLaterThan(date1, date2) {
+    return date1 > date2
   },
-  respondsTo(value1, value2) {
-    return value1[value2] && typeof value1[value2] === 'function'
+  respondsTo(object, string) {
+    return object[string] && typeof object[string] === 'function'
   },
-  startsWith(value1, value2) {
-    return value1.startsWith(value2)
+  startsWith(string1, string2) {
+    return string1.startsWith(string2)
   },
-  endsWith(value1, value2) {
-    return value1.endsWith(value2)
+  endsWith(string1, string2) {
+    return string1.endsWith(string2)
   },
   isAlternative(value1, value2) {
     return !!(value1 || value2)
@@ -176,8 +176,8 @@ module.exports = {
   includes(value1, value2) {
     return value1.includes(value2)
   },
-  matches(value1, value2) {
-    return !!value1.match(value2)
+  matches(string, regExp) {
+    return !!string.match(regExp)
   },
   isBitwiseAlternative(value1, value2) {
     return !!(value1 | value2)
@@ -194,40 +194,40 @@ module.exports = {
   haveMoreThan(value1, value2) {
     return value1.length > value2
   },
-  have(value1, value2) {
-    return !value2 && value1.length > 0 || value1.length === value2
+  have(value, number) {
+    return !number && value.length > 0 || value.length === number
   },
-  haveLessThan(value1, value2) {
-    return value1.length < value2
+  haveLessThan(value, number) {
+    return value.length < number
   },
   isBetween(value1, value2, value3) {
     return value1 >= value2 && value1 <= value3
   },
-  isLessThan(value1, value2) {
-    return value1 < value2
+  isLessThan(number1, number2) {
+    return number1 < number2
   },
-  isGreaterThan(value1, value2) {
-    return value1 > value2
+  isGreaterThan(number1, number2) {
+    return number1 > number2
   },
-  isLessThanOrEqual(value1, value2) {
-    return value1 <= value2
+  isLessThanOrEqual(number1, number2) {
+    return number1 <= number2
   },
-  hasLengthOf(value1, value2) {
-    return value1.length === value2
+  hasLengthOf(value, number) {
+    return value.length === number
   },
-  hasLengthOfAtLeast(value1, value2) {
-    return value1.length >= value2
+  hasLengthOfAtLeast(value, number) {
+    return value.length >= number
   },
-  hasLengthOfAtMost(value1, value2) {
-    return value1.length <= value2
+  hasLengthOfAtMost(value, number) {
+    return value.length <= number
   },
   isIn(value1, value2) {
     return value2.includes(value1)
   },
-  hasExtension(value1, value2) {
-    return value1.endsWith(`.${value2}`)
+  hasExtension(string1, string2) {
+    return string1.endsWith(`.${string2}`)
   },
-  isAudio(value) {
+  isAudio(string) {
     const extensions = [
       '.3gp',
       '.aa',
@@ -270,9 +270,9 @@ module.exports = {
       '.webm',
       '.8svx'
     ]
-    return extensions.includes(value.substr(value.lastIndexOf('.')))
+    return extensions.includes(string.substr(string.lastIndexOf('.')))
   },
-  isVideo(value) {
+  isVideo(string) {
     const extensions = [
       '.webm',
       '.mkv',
@@ -316,9 +316,9 @@ module.exports = {
       '.f4a',
       '.f4b'
     ]
-    return extensions.includes(value.substr(value.lastIndexOf('.')))
+    return extensions.includes(string.substr(string.lastIndexOf('.')))
   },
-  isImage(value) {
+  isImage(string) {
     const extensions = [
       '.tif',
       '.tiff',
@@ -337,20 +337,20 @@ module.exports = {
       '.svg',
       '.bmp'
     ]
-    return extensions.includes(value.substr(value.lastIndexOf('.')))
+    return extensions.includes(string.substr(string.lastIndexOf('.')))
   },
-  isEmptyArray(value) {
-    return !value.length
+  isEmptyArray(array) {
+    return !array.length
   },
-  isEmptyObject(value) {
-   return !Object.keys(value).length
+  isEmptyObject(object) {
+   return !Object.keys(object).length
   },
-  isEmptySet(value) {
-   return !value.size
+  isEmptySet(set) {
+   return !set.size
   },
-  isPhone(value) {
-    if (!value) return false
+  isPhone(string) {
+    if (!string) return false
     const regExp = /^(\+?\(?\d{1,3}\)?(-|\s)?)?(\d{2,3}(-|\s)?){3}$/
-    return regExp.test(value)
+    return regExp.test(string)
   }
 }
