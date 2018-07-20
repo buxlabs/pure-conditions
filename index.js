@@ -110,6 +110,9 @@ module.exports = {
   hasNumbers(value) {
     return Object.values(value).filter(element => typeof element === 'number').length > 1
   },
+  hasDuplicates(value) {
+    return new Set(value).size !== value.length
+  },
   isPrime(value) {
     if (value === 1) return false
     for (let i = 2; i < value; i++) if (value % i === 0) return false

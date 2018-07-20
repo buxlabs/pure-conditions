@@ -35,6 +35,7 @@ const {
   hasNewLine,
   hasNumber,
   hasNumbers,
+  hasDuplicates,
   isPrime,
   isPalindrome,
   isEmail,
@@ -259,6 +260,10 @@ equal(hasNumbers({ foo: 1, bar: 'baz' }), false)
 equal(hasNumbers({ foo: 1, bar: 2 }), true)
 equal(hasNumbers(3), false)
 equal(hasNumbers('foobar'), false)
+
+equal(hasDuplicates(['foo', 'foo']), true)
+equal(hasDuplicates([1, 1]), true)
+equal(hasDuplicates(['foo', 'bar']), false)
 
 equal(isPrime(1), false)
 equal(isPrime(3), true)
