@@ -147,7 +147,7 @@ module.exports = {
     return date1 > date2
   },
   respondsTo(object, string) {
-    return object[string] && typeof object[string] === 'function'
+    return !!(object[string] && typeof object[string] === 'function')
   },
   startsWith(string1, string2) {
     return string1.startsWith(string2)

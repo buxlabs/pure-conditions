@@ -20,5 +20,6 @@
   "bugs": {
     "url": "https://github.com/buxlabs/pure-conditions/issues"
   },
-  "homepage": "https://github.com/buxlabs/pure-conditions#readme"
+  "homepage": "https://github.com/buxlabs/pure-conditions#readme",
+  "devDependencies": {}
 }

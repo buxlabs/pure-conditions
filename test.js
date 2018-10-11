@@ -150,10 +150,10 @@ equal(isObject(null), false)
 equal(isObject(undefined), false)
 equal(isObject([]), true)
 
-equal(isFrozen(Object.isFrozen(Object.freeze({}))), true)
+equal(isFrozen(isFrozen(Object.freeze({}))), true)
 equal(isFrozen({}), false)
 
-equal(isSealed(Object.isSealed(Object.seal({}))), true)
+equal(isSealed(isSealed(Object.seal({}))), true)
 equal(isSealed({}), false)
 
 equal(isRegExp(/foo/), true)
@@ -300,6 +300,9 @@ equal(isDivisible(64, 6), false)
 
 equal(isSoonerThan(new Date(2018, 4, 1), new Date(2018, 4, 11)), true)
 equal(isSoonerThan(new Date(2018, 4, 11), new Date(2018, 4, 1)), false)
+
+equal(respondsTo({ foo: function () {} }, 'foo'), true)
+equal(respondsTo({ foo: function () {} }, 'bar'), false)
 
 equal(isLaterThan(new Date(2018, 4, 11), new Date(2018, 4, 1)), true)
 equal(isLaterThan(new Date(2018, 4, 1), new Date(2018, 4, 11)), false)
