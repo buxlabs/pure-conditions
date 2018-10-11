@@ -1,6 +1,6 @@
 {
   "name": "pure-conditions",
-  "version": "0.1.13",
+  "version": "0.1.14",
   "description": "Utility methods for simple conditions",
   "main": "index.js",
   "scripts": {
