@@ -4,7 +4,7 @@
   "description": "Utility methods for simple conditions",
   "main": "index.js",
   "scripts": {
-    "test": "node test.js && node docs/generate.js"
+    "test": "node test.js && node docs/generate.js && node fixtures/output.js"
   },
   "repository": {
     "type": "git",
