@@ -31,7 +31,7 @@ module.exports = {
     [
       {
         input: [Infinity],
-        code: 'isFinite(Infinity)'
+        code: 'isInfinite(Infinity)'
       }
     ]
   },
@@ -123,7 +123,7 @@ module.exports = {
     [
       {
         input: ['foo'],
-        code: 'isAlphaNumeric("foo)'
+        code: 'isAlphaNumeric("foo")'
       },
       {
         input: ['foo123'],
@@ -308,7 +308,7 @@ module.exports = {
         code: 'isTruthy({})'
       },
       {
-        input: [],
+        input: [[]],
         code: 'isTruthy([])'
       }
     ]
@@ -396,8 +396,8 @@ module.exports = {
     examples:
     [
       {
-        input: ['Devil lived'],
-        code: 'isPalindrome("Devil lived")'
+        input: ['devil lived'],
+        code: 'isPalindrome("devil lived")'
       }
     ]
   },
@@ -405,8 +405,8 @@ module.exports = {
     examples:
     [
       {
-        input: ['foo@bar@gmail.com'],
-        code: 'isEmail("foo@bar@gmail.com")'
+        input: ['foobar@gmail.com'],
+        code: 'isEmail("foobar@gmail.com")'
       }
     ]
   },
@@ -460,7 +460,7 @@ module.exports = {
     [
       {
         input: [new Date(2018, 4, 11), new Date(2018, 4, 1)],
-        code: 'isLaterThan([new Date(2018, 4, 11), new Date(2018, 4, 1))'
+        code: 'isLaterThan(new Date(2018, 4, 11), new Date(2018, 4, 1))'
       }
     ]
   },
@@ -566,7 +566,7 @@ module.exports = {
     examples:
     [
       {
-        input: ['lorem ipsum', '/ipsum/'],
+        input: ['lorem ipsum', /ipsum/],
         code: 'matches("lorem ipsum", /ipsum/)'
       }
     ]
@@ -628,8 +628,8 @@ module.exports = {
     examples:
     [
       {
-        input: [[1, 2, 3, 4, 5], 4],
-        code: 'have([1, 2, 3, 4, 5], 4)'
+        input: [[1, 2, 3, 4, 5], 5],
+        code: 'have([1, 2, 3, 4, 5], 5)'
       }
     ]
   },
@@ -637,8 +637,8 @@ module.exports = {
     examples:
     [
       {
-        input: [[1, 2, 3], 2],
-        code: 'haveLessThan([1, 2, 3], 2)'
+        input: [[1, 2, 3], 10],
+        code: 'haveLessThan([1, 2, 3], 10)'
       }
     ]
   },
