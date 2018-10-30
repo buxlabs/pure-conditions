@@ -352,5 +352,14 @@ module.exports = {
     if (!string) return false
     const regExp = /^(\+?\(?\d{1,3}\)?(-|\s)?)?(\d{2,3}(-|\s)?){3}$/
     return regExp.test(string)
+  },
+  isMobile() {
+    return window.matchMedia('(max-width: 767px)').matches
+  },
+  isTablet() {
+    return window.matchMedia('(min-width: 768px) and (max-width: 991px)').matches
+  },
+  isComputer () {
+    return window.matchMedia('(min-width: 992px)').matches
   }
 }

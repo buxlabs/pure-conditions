@@ -552,4 +552,25 @@ module.exports = {
       pl: `Sprawdza czy podany łańcuch jest prawidłowym numerem telefonu.`
     }
   },
+  isMobile: {
+    parameters: [],
+    description: {
+      en: 'Checks if device is a smartphone (The viewport is at most 767 pixels wide)',
+      pl: `Sprawdza czy urządzenie jest smartfonem (Szerokość okna przeglądarki wynosi maksymalnie 767 pikseli)`
+    }
+  },
+  isTablet: {
+    parameters: [],
+    description: {
+      en: 'Checks if device is a tablet (The viewport width is between 768px and 991px)',
+      pl: `Sprawdza czy urządzenie jest tabletem (Szerokość okna przeglądarki jest pomiędzy 768px a 991px)`
+    }
+  },
+  isComputer: {
+    parameters: [],
+    description: {
+      en: 'Checks if device is a computer (The viewport is at least 992 pixels wide)',
+      pl: `Sprawdza czy urządzenie jest komputerem (Szerokość okna przeglądarki wynosi przynajmniej 992px)`
+    }
+  }
 }

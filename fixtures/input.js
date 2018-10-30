@@ -797,5 +797,35 @@ module.exports = {
         code: 'hasExtension("foo.txt", "txt")'
       }
     ]
-  }
+  },
+  isMobile: {
+    examples:
+    [
+      {
+        input: [],
+        code: 'isMobile()',
+        output: true
+      }
+    ]
+  },
+  isTablet: {
+    examples:
+    [
+      {
+        input: [],
+        code: 'isTablet()',
+        output: true
+      }
+    ]
+  },
+  isComputer: {
+    examples:
+    [
+      {
+        input: [],
+        code: 'isComputer()',
+        output: true
+      }
+    ]
+  },
 }
