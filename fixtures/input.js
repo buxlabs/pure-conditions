@@ -6,7 +6,7 @@ module.exports = {
         input: [100],
         code: 'isPositive(100)'
       }
-    ],
+    ]
   },
   isNegative: {
     examples:
@@ -36,16 +36,16 @@ module.exports = {
     ]
   },
   isPresent: {
-   examples:
+    examples:
    [
-    {
-      input: [{ foo: 'bar' }],
-      code: 'isPresent({ foo: "bar" })'
-    },
-    {
-      input: [null],
-      code: 'isPresent(null)'
-    }
+     {
+       input: [{ foo: 'bar' }],
+       code: 'isPresent({ foo: "bar" })'
+     },
+     {
+       input: [null],
+       code: 'isPresent(null)'
+     }
    ]
   },
   isUndefined: {
@@ -139,7 +139,7 @@ module.exports = {
         code: 'isObject({})'
       },
       {
-        input: [function () {} ],
+        input: [function () {}],
         code: 'isObject(function () {})'
       }
     ]
@@ -188,7 +188,7 @@ module.exports = {
         code: 'isDigit(2)'
       },
       {
-        input: ['2'] ,
+        input: ['2'],
         code: 'isDigit("2")'
       }
     ]
@@ -356,7 +356,7 @@ module.exports = {
         code: 'hasNumber([1, 2])'
       },
       {
-        input: [{ foo: 1, bar: "baz" }],
+        input: [{ foo: 1, bar: 'baz' }],
         code: 'hasNumber({ foo: 1, bar: "baz" })'
       }
     ]
@@ -365,11 +365,11 @@ module.exports = {
     examples:
     [
       {
-        input: [[1,2]],
+        input: [[1, 2]],
         code: 'hasNumber([1, 2])'
       },
       {
-        input: [{ foo: 1, bar: "baz", ban: 2 }],
+        input: [{ foo: 1, bar: 'baz', ban: 2 }],
         code: 'hasNumber({ foo: 1, bar: "baz", ban: 2 })'
       }
     ]
@@ -495,11 +495,11 @@ module.exports = {
     examples:
     [
       {
-        input: [0,1],
+        input: [0, 1],
         code: 'isAlternative(0, 1)'
       },
       {
-        input: [1,1],
+        input: [1, 1],
         code: 'isAlternative(1, 1)'
       }
     ]
@@ -508,11 +508,11 @@ module.exports = {
     examples:
     [
       {
-        input: [1,0],
+        input: [1, 0],
         code: 'isExclusiveAlternative(1, 0)'
       },
       {
-        input: [0,1],
+        input: [0, 1],
         code: 'isExclusiveAlternative(0, 1)'
       }
     ]
@@ -521,7 +521,7 @@ module.exports = {
     examples:
     [
       {
-        input: [1,1],
+        input: [1, 1],
         code: 'isConjunction(1, 1)'
       }
     ]
@@ -575,11 +575,11 @@ module.exports = {
     examples:
     [
       {
-        input: [1,0],
+        input: [1, 0],
         code: 'isBitwiseAlternative(1, 0)'
       },
       {
-        input: [1,1],
+        input: [1, 1],
         code: 'isBitwiseAlternative(1, 1)'
       }
     ]
@@ -588,11 +588,11 @@ module.exports = {
     examples:
     [
       {
-        input: [1,0],
+        input: [1, 0],
         code: 'isBitwiseAlternativeNegation(1, 0)'
       },
       {
-        input: [0,1],
+        input: [0, 1],
         code: 'isBitwiseAlternativeNegation(0, 1)'
       }
     ]
@@ -708,7 +708,7 @@ module.exports = {
         code: 'hasLengthOfAtMost([1, 2, 3, 4, 5], 10)'
       },
       {
-        input: [[1,2,3], 2],
+        input: [[1, 2, 3], 2],
         code: 'hasLengthOfAtMost([1, 2, 3], 2)'
       }
     ]
@@ -827,5 +827,5 @@ module.exports = {
         output: true
       }
     ]
-  },
+  }
 }
