@@ -1,233 +1,234 @@
 module.exports = {
-  isPositive(number) {
+  isPositive (number) {
     return number > 0
   },
-  isNegative(number) {
+  isNegative (number) {
     return number < 0
   },
-  isFinite(number) {
+  isFinite (number) {
     return isFinite(number)
   },
-  isInfinite(number) {
+  isInfinite (number) {
     return number === Number.POSITIVE_INFINITY || number === Number.NEGATIVE_INFINITY
   },
-  isPresent(value) {
+  isPresent (value) {
     return value !== void 0
   },
-  isUndefined(value) {
+  isUndefined (value) {
     return value === void 0
   },
-  isNull(value) {
+  isNull (value) {
     return value === null
   },
-  isEven(number) {
+  isEven (number) {
     return number % 2 === 0
   },
-  isOdd(number) {
+  isOdd (number) {
     return number % 2 !== 0
   },
-  isEmpty(value) {
+  isEmpty (value) {
     const type = Object.prototype.toString.call(value).substr(8).replace(']', '')
-    return value == null ||
-      (type === 'Array' || type === 'String') && value.length === 0 ||
-      (type === 'Set' || type === 'Map') && value.size === 0 ||
-      (type === 'Object' || type === 'Function') && Object.keys(value).length === 0
+    return value == null || (
+      ((type === 'Array' || type === 'String') && (value.length === 0)) ||
+      ((type === 'Set' || type === 'Map') && (value.size === 0)) ||
+      ((type === 'Object' || type === 'Function') && (Object.keys(value).length === 0))
+    )
   },
-  isAlpha(string) {
+  isAlpha (string) {
     return [...string].every(char => /[A-Za-z]/.test(char))
   },
-  isAlphaNumeric(string) {
+  isAlphaNumeric (string) {
     return [...string].every(char => /[A-Za-z0-9]/.test(char))
   },
-  isObject(value){
+  isObject (value) {
     const type = typeof value
     return (type === 'function' || type === 'object') && !!value
   },
-  isFrozen(object) {
+  isFrozen (object) {
     return Object.isFrozen(object)
   },
-  isSealed(object) {
+  isSealed (object) {
     return Object.isSealed(object)
   },
-  isRegExp(value) {
+  isRegExp (value) {
     return Object.prototype.toString.call(value) === '[object RegExp]'
   },
-  isNumber(value) {
+  isNumber (value) {
     return Object.prototype.toString.call(value) === '[object Number]'
   },
-  isDigit(value) {
+  isDigit (value) {
     return /^[0-9]{1}$/.test(value)
   },
-  isDecimal(value) {
+  isDecimal (value) {
     return value % 1 !== 0
   },
-  isNumeric(value) {
+  isNumeric (value) {
     const type = typeof value
     return (type === 'string' || type === 'number') && !isNaN(Number(value))
   },
-  isString(value) {
+  isString (value) {
     return Object.prototype.toString.call(value) === '[object String]'
   },
-  isBoolean(value) {
+  isBoolean (value) {
     return Object.prototype.toString.call(value) === '[object Boolean]'
   },
-  isArray(value) {
+  isArray (value) {
     return Array.isArray(value)
   },
-  isSymbol(value) {
+  isSymbol (value) {
     return Object.prototype.toString.call(value) === '[object Symbol]'
   },
-  isMap(value) {
+  isMap (value) {
     return Object.prototype.toString.call(value) === '[object Map]'
   },
-  isWeakMap(value) {
+  isWeakMap (value) {
     return Object.prototype.toString.call(value) === '[object WeakMap]'
   },
-  isSet(value) {
+  isSet (value) {
     return Object.prototype.toString.call(value) === '[object Set]'
   },
-  isWeakSet(value) {
+  isWeakSet (value) {
     return Object.prototype.toString.call(value) === '[object WeakSet]'
   },
-  isDate(value) {
+  isDate (value) {
     return Object.prototype.toString.call(value) === '[object Date]'
   },
-  isTruthy(value) {
+  isTruthy (value) {
     return !!value
   },
-  isFalsy(value) {
+  isFalsy (value) {
     return !value
   },
-  hasWhitespace(string) {
+  hasWhitespace (string) {
     return /\s|&nbsp;/g.test(string)
   },
-  hasNewLine(string) {
+  hasNewLine (string) {
     return /\n/g.test(string)
   },
-  hasNumber(value) {
+  hasNumber (value) {
     return typeof value === 'number' ? true : Object.values(value).some(element => typeof element === 'number')
   },
-  hasNumbers(value) {
+  hasNumbers (value) {
     return Object.values(value).filter(element => typeof element === 'number').length > 1
   },
-  hasDuplicates(value) {
+  hasDuplicates (value) {
     return new Set(value).size !== value.length
   },
-  isPrime(number) {
+  isPrime (number) {
     if (number === 1) return false
     for (let i = 2; i < number; i++) if (number % i === 0) return false
     return true
   },
-  isPalindrome(string) {
+  isPalindrome (string) {
     string = string.toLowerCase()
     return string.split('').reverse().join('') === string
   },
-  isEmail(string) {
+  isEmail (string) {
     string = string.toLowerCase()
-    const regExp = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    const regExp = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
     return regExp.test(string)
   },
-  isUrl(string) {
-   const regExp = /((([A-Za-z]{3,9}:(?:\/\/)?)(?:[\-;:&=\+\$,\w]+@)?[A-Za-z0-9\.\-]+|(?:www\.|[\-;:&=\+\$,\w]+@)[A-Za-z0-9\.\-]+)((?:\/[\+~%\/\.\w\-_]*)?\??(?:[\-\+=&;%@\.\w_]*)#?(?:[\.\!\/\\\w]*))?)/
-   return regExp.test(string)
+  isUrl (string) {
+    const regExp = /((([A-Za-z]{3,9}:(?:\/\/)?)(?:[-;:&=+$,\w]+@)?[A-Za-z0-9.-]+|(?:www\.|[-;:&=+$,\w]+@)[A-Za-z0-9.-]+)((?:\/[+~%/.\w\-_]*)?\??(?:[-+=&;%@.\w_]*)#?(?:[.!/\\\w]*))?)/
+    return regExp.test(string)
   },
-  haveMany(value) {
+  haveMany (value) {
     return value.length > 1
   },
-  isMultiple(number1, number2) {
+  isMultiple (number1, number2) {
     return number1 % number2 === 0
   },
-  isDivisible(number1, number2) {
+  isDivisible (number1, number2) {
     return number1 % number2 === 0
   },
-  isSoonerThan(date1, date2) {
+  isSoonerThan (date1, date2) {
     return date1 < date2
   },
-  isLaterThan(date1, date2) {
+  isLaterThan (date1, date2) {
     return date1 > date2
   },
-  respondsTo(object, string) {
+  respondsTo (object, string) {
     return !!(object[string] && typeof object[string] === 'function')
   },
-  startsWith(string1, string2) {
+  startsWith (string1, string2) {
     return string1.startsWith(string2)
   },
-  endsWith(string1, string2) {
+  endsWith (string1, string2) {
     return string1.endsWith(string2)
   },
-  isAlternative(value1, value2) {
+  isAlternative (value1, value2) {
     return !!(value1 || value2)
   },
-  isExclusiveAlternative(value1, value2) {
+  isExclusiveAlternative (value1, value2) {
     return !!((value1 && !value2) || (!value1 && value2))
   },
-  isConjunction(value1, value2) {
+  isConjunction (value1, value2) {
     return !!(value1 && value2)
   },
-  isEquals(value1, value2) {
+  isEquals (value1, value2) {
     return value1 === value2
   },
-  notEqual(value1, value2) {
+  notEqual (value1, value2) {
     return value1 !== value2
   },
-  isGreaterThanOrEqual(value1, value2) {
+  isGreaterThanOrEqual (value1, value2) {
     return value1 >= value2
   },
-  includes(value1, value2) {
+  includes (value1, value2) {
     return value1.includes(value2)
   },
-  matches(string, regExp) {
+  matches (string, regExp) {
     return !!string.match(regExp)
   },
-  isBitwiseAlternative(value1, value2) {
+  isBitwiseAlternative (value1, value2) {
     return !!(value1 | value2)
   },
-  isBitwiseConjunction(value1, value2) {
+  isBitwiseConjunction (value1, value2) {
     return !!(value1 & value2)
   },
-  isBitwiseAlternativeNegation(value1, value2) {
+  isBitwiseAlternativeNegation (value1, value2) {
     return !!((value1 && !value2) || (!value1 && value2))
   },
-  isBitwiseNegation(value) {
+  isBitwiseNegation (value) {
     return !!(~value)
   },
-  haveMoreThan(value1, value2) {
+  haveMoreThan (value1, value2) {
     return value1.length > value2
   },
-  have(value, number) {
-    return !number && value.length > 0 || value.length === number
+  have (value, number) {
+    return (!number && value.length) > 0 || (value.length === number)
   },
-  haveLessThan(value, number) {
+  haveLessThan (value, number) {
     return value.length < number
   },
-  isBetween(value1, value2, value3) {
+  isBetween (value1, value2, value3) {
     return value1 >= value2 && value1 <= value3
   },
-  isLessThan(number1, number2) {
+  isLessThan (number1, number2) {
     return number1 < number2
   },
-  isGreaterThan(number1, number2) {
+  isGreaterThan (number1, number2) {
     return number1 > number2
   },
-  isLessThanOrEqual(number1, number2) {
+  isLessThanOrEqual (number1, number2) {
     return number1 <= number2
   },
-  hasLengthOf(value, number) {
+  hasLengthOf (value, number) {
     return value.length === number
   },
-  hasLengthOfAtLeast(value, number) {
+  hasLengthOfAtLeast (value, number) {
     return value.length >= number
   },
-  hasLengthOfAtMost(value, number) {
+  hasLengthOfAtMost (value, number) {
     return value.length <= number
   },
-  isIn(value1, value2) {
+  isIn (value1, value2) {
     return value2.includes(value1)
   },
-  hasExtension(string1, string2) {
+  hasExtension (string1, string2) {
     return string1.endsWith(`.${string2}`)
   },
-  isAudio(string) {
+  isAudio (string) {
     const extensions = [
       '.3gp',
       '.aa',
@@ -272,7 +273,7 @@ module.exports = {
     ]
     return extensions.includes(string.substr(string.lastIndexOf('.')))
   },
-  isVideo(string) {
+  isVideo (string) {
     const extensions = [
       '.webm',
       '.mkv',
@@ -318,7 +319,7 @@ module.exports = {
     ]
     return extensions.includes(string.substr(string.lastIndexOf('.')))
   },
-  isImage(string) {
+  isImage (string) {
     const extensions = [
       '.tif',
       '.tiff',
@@ -339,24 +340,24 @@ module.exports = {
     ]
     return extensions.includes(string.substr(string.lastIndexOf('.')))
   },
-  isEmptyArray(array) {
+  isEmptyArray (array) {
     return !array.length
   },
-  isEmptyObject(object) {
-   return !Object.keys(object).length
+  isEmptyObject (object) {
+    return !Object.keys(object).length
   },
-  isEmptySet(set) {
-   return !set.size
+  isEmptySet (set) {
+    return !set.size
   },
-  isPhone(string) {
+  isPhone (string) {
     if (!string) return false
     const regExp = /^(\+?\(?\d{1,3}\)?(-|\s)?)?(\d{2,3}(-|\s)?){3}$/
     return regExp.test(string)
   },
-  isMobile() {
+  isMobile () {
     return window.matchMedia('(max-width: 767px)').matches
   },
-  isTablet() {
+  isTablet () {
     return window.matchMedia('(min-width: 768px) and (max-width: 991px)').matches
   },
   isComputer () {

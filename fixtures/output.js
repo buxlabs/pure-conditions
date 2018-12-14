@@ -6,8 +6,7 @@ for (let method in methods) {
   for (let example of input[method].examples) {
     if (!example.code) throw new Error(`Missing example for example ${method}, ${input}`)
     if (!example.output) {
-      const { input } = example
-      example.output = fn(...input)
+      example.output = fn(...example.input)
     }
   }
 }

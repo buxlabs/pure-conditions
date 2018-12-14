@@ -6,8 +6,8 @@
   "scripts": {
     "pretest": "npm run lint",
     "test": "node test.js && node docs/generate.js && node fixtures/output.js",
-    "lint": "eslint **/*.js",
-    "lint:fix": "eslint **/*.js --fix"
+    "lint": "eslint *.js **/*.js",
+    "lint:fix": "eslint *.js **/*.js --fix"
   },
   "repository": {
     "type": "git",
