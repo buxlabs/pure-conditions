@@ -9,8 +9,9 @@ which give you ready-made solutions.
 Methods in *pure-conditions* are simple as possible and cover the most common cases.
 
 ## Getting Started
+
 ```bash
-$ npm install pure-conditions
+npm install pure-conditions
 ```
 
 ## Examples
