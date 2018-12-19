@@ -13,3 +13,10 @@ action "npm run lint" {
   needs = ["npm install"]
   runs = "npm run lint"
 }
+
+action "npm test" {
+  uses = "actions/npm@c555744"
+  needs = ["npm install"]
+  runs = "npm test"
+}
+

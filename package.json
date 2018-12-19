@@ -4,7 +4,6 @@
   "description": "Utility methods for simple conditions",
   "main": "index.js",
   "scripts": {
-    "pretest": "npm run lint",
     "test": "node test.js && node docs/generate.js && node fixtures/output.js",
     "lint": "eslint *.js **/*.js",
     "lint:fix": "eslint *.js **/*.js --fix"
