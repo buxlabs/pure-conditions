@@ -2,7 +2,7 @@ workflow "New workflow" {
   on = "push"
   resolves = [
     "npm run lint",
-    "npm t",
+    "npm test",
   ]
 }
 
@@ -21,10 +21,4 @@ action "npm test" {
   uses = "actions/npm@c555744"
   needs = ["npm install"]
   runs = "npm test"
-}
-
-action "npm t" {
-  uses = "actions/npm@c555744"
-  needs = ["npm install"]
-  runs = "npm t"
 }
