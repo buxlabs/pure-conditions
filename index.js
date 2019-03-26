@@ -397,5 +397,8 @@ module.exports = {
     if (!result || !result.length) return false
     if (!words) return !!result.length
     return result.length === words
+  },
+  isInstanceOf (object1, object2) {
+    return object1 instanceof object2
   }
 }

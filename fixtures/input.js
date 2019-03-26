@@ -920,5 +920,14 @@ module.exports = {
         code: 'hasWords(myVariable)'
       }
     ]
+  },
+  isInstanceOf: {
+    examples:
+    [
+      {
+        input: [['foo', 'bar'], Array],
+        code: 'isInstanceOf(["foo", "bar"])'
+      }
+    ]
   }
 }

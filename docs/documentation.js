@@ -618,22 +618,29 @@ module.exports = {
   isMissing: {
     parameters: ['object'],
     description: {
-      en: 'Checks if object is undefined',
+      en: 'Checks if object is undefined.',
       pl: 'Sprawdza czy obiekt jest niezdefiniowany.'
     }
   },
   exists: {
     parameters: ['object'],
     description: {
-      en: 'Checks if object is defined',
+      en: 'Checks if object is defined.',
       pl: 'Sprawdza czy obiekt jest zdefiniowany.'
     }
   },
   hasWords: {
     parameters: ['string', 'number'],
     description: {
-      en: 'Checks if the string contains particular number of words',
+      en: 'Checks if the string contains particular number of words.',
       pl: 'Sprawdza czy łańcuch znaków zawiera określoną liczbę wyrazów.'
+    }
+  },
+  isInstanceOf: {
+    parameters: ['object', 'constructor'],
+    description: {
+      en: 'Checks if the prototype property of a constructor exists in the prototype chain of an object.',
+      pl: 'Sprawdza czy obiekt jest instacją danej klasy.'
     }
   }
 }

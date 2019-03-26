@@ -87,7 +87,8 @@ const {
   isExtensible,
   hasKeys,
   exists,
-  hasWords
+  hasWords,
+  isInstanceOf
 } = require('.')
 
 deepStrictEqual(isPositive(1), true)
@@ -535,3 +536,7 @@ deepStrictEqual(hasWords('foo bar', 2), true)
 deepStrictEqual(hasWords('foo bar', 1), false)
 deepStrictEqual(hasWords('', 2), false)
 deepStrictEqual(hasWords('        ', 2), false)
+
+deepStrictEqual(isInstanceOf(new Date(), Date), true)
+deepStrictEqual(isInstanceOf({}, Object), true)
+deepStrictEqual(isInstanceOf('foo', Array), false)
