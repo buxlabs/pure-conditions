@@ -6,6 +6,7 @@ const {
   isInfinite,
   isPresent,
   isUndefined,
+  isMissing,
   isNull,
   isEven,
   isOdd,
@@ -78,7 +79,15 @@ const {
   isEmptyArray,
   isEmptyObject,
   isEmptySet,
-  isPhone
+  isPhone,
+  isNaN,
+  hasTypeOf,
+  isFunction,
+  isError,
+  isExtensible,
+  hasKeys,
+  exists,
+  hasWords
 } = require('.')
 
 deepStrictEqual(isPositive(1), true)
@@ -468,3 +477,61 @@ deepStrictEqual(isPhone('32  267  70  41'), false)
 deepStrictEqual(isPhone('3 2 267 70 41'), false)
 deepStrictEqual(isPhone('(541) 754-3010'), true)
 deepStrictEqual(isPhone('444-555-1234'), true)
+
+deepStrictEqual(isNaN(NaN), true)
+deepStrictEqual(isNaN(Number.NaN), true)
+deepStrictEqual(isNaN(0 / 0), true)
+deepStrictEqual(isNaN(null), false)
+deepStrictEqual(isNaN(true), false)
+deepStrictEqual(isNaN(37), false)
+deepStrictEqual(isNaN('37'), false)
+
+deepStrictEqual(hasTypeOf(true, 'boolean'), true)
+deepStrictEqual(hasTypeOf(37, 'number'), true)
+deepStrictEqual(hasTypeOf('37', 'string'), true)
+deepStrictEqual(hasTypeOf('37', 'number'), false)
+deepStrictEqual(hasTypeOf(NaN, 'NaN'), false)
+deepStrictEqual(hasTypeOf(NaN, 'number'), true)
+
+deepStrictEqual(isFunction(function () {}), true)
+deepStrictEqual(isFunction(Date), true)
+deepStrictEqual(isFunction(() => {}), true)
+deepStrictEqual(isFunction({}), false)
+
+deepStrictEqual(isError(new Error('ValidationError')), true)
+deepStrictEqual(isError({ stack: 'foo', message: 'bar' }), false)
+
+deepStrictEqual(isExtensible({}), true)
+deepStrictEqual(isExtensible(1), false)
+deepStrictEqual(isExtensible(Object.seal({})), false)
+deepStrictEqual(isExtensible(Object.freeze({})), false)
+deepStrictEqual(isExtensible(Object.preventExtensions({})), false)
+
+deepStrictEqual(hasKeys({}), false)
+deepStrictEqual(hasKeys([]), false)
+deepStrictEqual(hasKeys(new Set()), false)
+deepStrictEqual(hasKeys(new Map()), false)
+deepStrictEqual(hasKeys(''), false)
+deepStrictEqual(hasKeys({ foo: 'bar' }), true)
+deepStrictEqual(hasKeys([1]), true)
+deepStrictEqual(hasKeys(new Set([1])), true)
+deepStrictEqual(hasKeys(new Map([['foo', 'bar']])), true)
+deepStrictEqual(hasKeys('foo'), true)
+
+deepStrictEqual(exists('foo'), true)
+deepStrictEqual(exists({}), true)
+deepStrictEqual(exists(null), true)
+deepStrictEqual(exists(undefined), false)
+
+deepStrictEqual(isMissing(undefined), true)
+deepStrictEqual(isMissing('foo'), false)
+deepStrictEqual(isMissing({}), false)
+deepStrictEqual(isMissing(null), false)
+
+deepStrictEqual(hasWords('foo'), true)
+deepStrictEqual(hasWords('foo', 1), true)
+deepStrictEqual(hasWords('lorem ipsum dolo olod mupsi', 5), true)
+deepStrictEqual(hasWords('foo bar', 2), true)
+deepStrictEqual(hasWords('foo bar', 1), false)
+deepStrictEqual(hasWords('', 2), false)
+deepStrictEqual(hasWords('        ', 2), false)

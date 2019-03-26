@@ -555,22 +555,85 @@ module.exports = {
   isMobile: {
     parameters: [],
     description: {
-      en: 'Checks if device is a smartphone (The viewport is at most 767 pixels wide)',
-      pl: `Sprawdza czy urządzenie jest smartfonem (Szerokość okna przeglądarki wynosi maksymalnie 767 pikseli)`
+      en: 'Checks if device is a smartphone (The viewport is at most 767 pixels wide).',
+      pl: `Sprawdza czy urządzenie jest smartfonem (Szerokość okna przeglądarki wynosi maksymalnie 767 pikseli).`
     }
   },
   isTablet: {
     parameters: [],
     description: {
-      en: 'Checks if device is a tablet (The viewport width is between 768px and 991px)',
-      pl: `Sprawdza czy urządzenie jest tabletem (Szerokość okna przeglądarki jest pomiędzy 768px a 991px)`
+      en: 'Checks if device is a tablet (The viewport width is between 768px and 991px).',
+      pl: `Sprawdza czy urządzenie jest tabletem (Szerokość okna przeglądarki jest pomiędzy 768px a 991px).`
     }
   },
   isComputer: {
     parameters: [],
     description: {
-      en: 'Checks if device is a computer (The viewport is at least 992 pixels wide)',
-      pl: `Sprawdza czy urządzenie jest komputerem (Szerokość okna przeglądarki wynosi przynajmniej 992px)`
+      en: 'Checks if device is a computer (The viewport is at least 992 pixels wide).',
+      pl: `Sprawdza czy urządzenie jest komputerem (Szerokość okna przeglądarki wynosi przynajmniej 992px).`
+    }
+  },
+  isNaN: {
+    parameters: ['value'],
+    description: {
+      en: 'Checks if passed value is NaN and the type of value is Number.',
+      pl: `Sprawdza czy przekazana wartość jest równa NaN, a jej typ to Number.`
+    }
+  },
+  hasTypeOf: {
+    parameters: ['value', 'string'],
+    description: {
+      en: 'Checks the type of passed value.',
+      pl: `Sprawdza typ przekazanej wartości.`
+    }
+  },
+  isFunction: {
+    parameters: ['value'],
+    description: {
+      en: 'Checks if passed value is a function.',
+      pl: `Sprawdza czy przekazana wartość jest funkcją.`
+    }
+  },
+  isError: {
+    parameters: ['object'],
+    description: {
+      en: 'Checks if passed object is an error object.',
+      pl: `Sprawdza czy przekazany obiekt jest instacją klasy Error.`
+    }
+  },
+  isExtensible: {
+    parameters: ['object'],
+    description: {
+      en: 'Determines if an object can be extend by new properties.',
+      pl: `Sprawdza czy przekazany obiekt może być rozszerzony o nowe właściwości.`
+    }
+  },
+  hasKeys: {
+    parameters: ['object'],
+    description: {
+      en: 'Checks if the passed object has any key.',
+      pl: `Sprawdza czy przekazany obiekt posiada klucze.`
+    }
+  },
+  isMissing: {
+    parameters: ['object'],
+    description: {
+      en: 'Checks if object is undefined',
+      pl: 'Sprawdza czy obiekt jest niezdefiniowany.'
+    }
+  },
+  exists: {
+    parameters: ['object'],
+    description: {
+      en: 'Checks if object is defined',
+      pl: 'Sprawdza czy obiekt jest zdefiniowany.'
+    }
+  },
+  hasWords: {
+    parameters: ['string', 'number'],
+    description: {
+      en: 'Checks if the string contains particular number of words',
+      pl: 'Sprawdza czy łańcuch znaków zawiera określoną liczbę wyrazów.'
     }
   }
 }

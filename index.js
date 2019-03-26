@@ -362,5 +362,40 @@ module.exports = {
   },
   isComputer () {
     return window.matchMedia('(min-width: 992px)').matches
+  },
+  isNaN (value) {
+    return Number.isNaN(value)
+  },
+  hasTypeOf (value, type) {
+    // eslint-disable-next-line valid-typeof
+    return typeof value === type
+  },
+  isFunction (value) {
+    return typeof value === 'function'
+  },
+  isError (object) {
+    return object instanceof Error
+  },
+  isExtensible (object) {
+    return Object.isExtensible(object)
+  },
+  hasKeys (object) {
+    if (object instanceof Map || object instanceof Set) return !!object.size
+    for (let property in object) {
+      if (object.hasOwnProperty(property)) return true
+    }
+    return false
+  },
+  isMissing (object) {
+    return typeof object === 'undefined'
+  },
+  exists (object) {
+    return typeof object !== 'undefined'
+  },
+  hasWords (string, words) {
+    const result = string.match(/\w+/g)
+    if (!result || !result.length) return false
+    if (!words) return !!result.length
+    return result.length === words
   }
 }

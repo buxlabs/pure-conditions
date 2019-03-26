@@ -827,5 +827,98 @@ module.exports = {
         output: true
       }
     ]
+  },
+  isNaN: {
+    examples:
+    [
+      {
+        input: [NaN],
+        code: 'isNaN(NaN)'
+      }
+    ]
+  },
+  hasTypeOf: {
+    examples:
+    [
+      {
+        input: [32, 'number'],
+        code: 'hasTypeOf(32, "number")'
+      }
+    ]
+  },
+  isFunction: {
+    examples:
+    [
+      {
+        input: [function () {}],
+        code: 'isFunction(function () {})'
+      }
+    ]
+  },
+  isError: {
+    examples:
+    [
+      {
+        code: 'isError(new Error("ValidationError"))',
+        output: true
+      }
+    ]
+  },
+  isExtensible: {
+    examples:
+    [
+      {
+        input: [{}],
+        code: 'isExtensible({})'
+      }
+    ]
+  },
+  hasKeys: {
+    examples:
+    [
+      {
+        input: [{ foo: 'bar' }],
+        code: 'hasKeys({ foo: "bar" })'
+      }
+    ]
+  },
+  isMissing: {
+    examples:
+    [
+      {
+        code: 'isMissing(myVariable)',
+        output: true
+      },
+      {
+        code: 'isMissing({})',
+        output: true
+      }
+    ]
+  },
+  exists: {
+    examples:
+    [
+      {
+        code: 'exists(myVariable)',
+        output: false
+      },
+      {
+        code: 'exists({})',
+        output: true
+      }
+    ]
+  },
+  hasWords: {
+    examples:
+    [
+      {
+        input: ['foo bar baz', 3],
+        code: 'hasWords("foo bar baz", 3)'
+      },
+      {
+        input: ['lorem ipsum'],
+        code: 'hasWords(myVariable)'
+      }
+    ]
   }
 }
