@@ -929,5 +929,18 @@ module.exports = {
         code: 'isInstanceOf(["foo", "bar"])'
       }
     ]
+  },
+  isPlainObject: {
+    examples:
+    [
+      {
+        input: [{}],
+        code: 'isPlainObject({})'
+      },
+      {
+        input: [[]],
+        code: 'isPlainObject([])'
+      }
+    ]
   }
 }

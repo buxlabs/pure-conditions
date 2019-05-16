@@ -88,7 +88,8 @@ const {
   hasKeys,
   exists,
   hasWords,
-  isInstanceOf
+  isInstanceOf,
+  isPlainObject
 } = require('.')
 
 deepStrictEqual(isPositive(1), true)
@@ -540,3 +541,9 @@ deepStrictEqual(hasWords('        ', 2), false)
 deepStrictEqual(isInstanceOf(new Date(), Date), true)
 deepStrictEqual(isInstanceOf({}, Object), true)
 deepStrictEqual(isInstanceOf('foo', Array), false)
+
+deepStrictEqual(isPlainObject({}), true)
+deepStrictEqual(isPlainObject({ foo: 'bar' }), true)
+deepStrictEqual(isPlainObject(function () {}), false)
+deepStrictEqual(isPlainObject([]), false)
+deepStrictEqual(isPlainObject(null), false)

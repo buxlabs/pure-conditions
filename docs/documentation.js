@@ -642,5 +642,12 @@ module.exports = {
       en: 'Checks if the prototype property of a constructor exists in the prototype chain of an object.',
       pl: 'Sprawdza czy obiekt jest instacją danej klasy.'
     }
+  },
+  isPlainObject: {
+    parameters: ['value'],
+    description: {
+      en: 'Checks if passed value is an object',
+      pl: 'Sprawdza czy przekazana wartość jest obiektem.'
+    }
   }
 }

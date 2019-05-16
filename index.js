@@ -400,5 +400,8 @@ module.exports = {
   },
   isInstanceOf (object1, object2) {
     return object1 instanceof object2
+  },
+  isPlainObject (object) {
+    return Object.prototype.toString.call(object) === '[object Object]'
   }
 }
