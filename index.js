@@ -225,8 +225,14 @@ module.exports = {
   isIn (value1, value2) {
     return value2.includes(value1)
   },
-  hasExtension (string1, string2) {
-    return string1.endsWith(`.${string2}`)
+  hasExtension (path, extension) {
+    if (!extension) {
+      const index = path.lastIndexOf('.')
+      if (index === -1) { return false }
+      return !!path.substr(index + 1)
+    }
+    if (extension.startsWith('.')) { return path.endsWith(extension) }
+    return path.endsWith(`.${extension}`)
   },
   isAudio (string) {
     const extensions = [
