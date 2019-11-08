@@ -352,7 +352,7 @@ module.exports = {
     return !array.length
   },
   isEmptyObject (object) {
-    return !Object.keys(object).length
+    return Object.keys(object).length === 0 && object.constructor === Object
   },
   isEmptySet (set) {
     return !set.size
