@@ -942,5 +942,23 @@ module.exports = {
         code: 'isPlainObject([])'
       }
     ]
+  },
+  areEqualArrays: {
+    examples:
+    [
+      {
+        input: [[], []],
+        code: 'areEqualArrays([], [])'
+      }
+    ]
+  },
+  areFullEqualArrays: {
+    examples: 
+    [
+      {
+        input: [[], []],
+        code: 'areFullEqualArrays([], [])'
+      }
+    ]
   }
 }

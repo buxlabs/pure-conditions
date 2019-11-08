@@ -89,7 +89,9 @@ const {
   exists,
   hasWords,
   isInstanceOf,
-  isPlainObject
+  isPlainObject,
+  areEqualArrays,
+  areFullEqualArrays
 } = require('.')
 
 deepStrictEqual(isPositive(1), true)
@@ -557,3 +559,13 @@ deepStrictEqual(isPlainObject({ foo: 'bar' }), true)
 deepStrictEqual(isPlainObject(function () {}), false)
 deepStrictEqual(isPlainObject([]), false)
 deepStrictEqual(isPlainObject(null), false)
+
+deepStrictEqual(areEqualArrays([], []), true)
+deepStrictEqual(areEqualArrays([1, 2, 3], [1, 2, 3]), true)
+deepStrictEqual(areEqualArrays([1, 3, 2], [1, 2, 3]), true)
+deepStrictEqual(areEqualArrays([1, 3, 2, 4], [1, 2, 3]), false)
+
+deepStrictEqual(areFullEqualArrays([], []), true)
+deepStrictEqual(areFullEqualArrays([1, 2, 3], [1, 2, 3]), true)
+deepStrictEqual(areFullEqualArrays([1, 3, 2], [1, 2, 3]), false)
+deepStrictEqual(areFullEqualArrays([1, 3, 2, 4], [1, 2, 3]), false)

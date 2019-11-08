@@ -411,5 +411,17 @@ module.exports = {
   },
   isPlainObject (object) {
     return Object.prototype.toString.call(object) === '[object Object]'
+  },
+  areEqualArrays(array1, array2) {
+    if (array1.length !== array2.length) {
+      return false;
+    }
+
+    const newArray1 = array1.slice().sort();
+    const newArray2 = array2.slice().sort();
+    return newArray1.every((value, index) => value === newArray2[index]);
+  },
+  areFullEqualArrays(array1, array2) {
+    return array1.length === array2.length && array1.every((value, index) => value === array2[index]);
   }
 }

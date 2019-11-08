@@ -649,5 +649,17 @@ module.exports = {
       en: 'Checks if passed value is an object',
       pl: 'Sprawdza czy przekazana wartość jest obiektem.'
     }
+  },
+  areEqualArrays: {
+    parameters: ['array1', 'array2'],
+    description: {
+      en: 'Checks if arrays are the same'
+    }
+  },
+  areFullEqualArrays: {
+    parameters: ['array1', 'array2'],
+    description: {
+      en: 'Checks if arrays are the same and in the following order'
+    }
   }
 }
