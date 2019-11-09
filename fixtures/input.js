@@ -943,21 +943,32 @@ module.exports = {
       }
     ]
   },
-  areEqualArrays: {
+  areArraysEqual: {
     examples:
     [
       {
-        input: [[], []],
-        code: 'areEqualArrays([], [])'
+        input: [[1, 3, 2], [1, 2, 3]],
+        code: 'areArraysEqual([1, 3, 2], [1, 2, 3])',
+        output: true
+      },
+      {
+        input: [[1, 2, 3], [1, 2, 3]],
+        code: 'areArraysEqual([1, 2, 3], [1, 2, 3])',
+        output: true
       }
     ]
   },
-  areFullEqualArrays: {
-    examples: 
+  areArraysStrictEqual: {
+    examples:
     [
       {
-        input: [[], []],
-        code: 'areFullEqualArrays([], [])'
+        input: [[1, 3, 2], [1, 2, 3]],
+        code: 'areArraysStrictEqual([1, 3, 2], [1, 2, 3])',
+        output: false
+      },
+      {
+        input: [[1, 2, 3], [1, 2, 3]],
+        code: 'areArraysStrictEqual([1, 2, 3], [1, 2, 3])'
       }
     ]
   }
