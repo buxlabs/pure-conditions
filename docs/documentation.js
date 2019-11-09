@@ -650,16 +650,18 @@ module.exports = {
       pl: 'Sprawdza czy przekazana wartość jest obiektem.'
     }
   },
-  areEqualArrays: {
+  areArraysEqual: {
     parameters: ['array1', 'array2'],
     description: {
-      en: 'Checks if arrays are the same'
+      en: 'Checks if the arrays have the same elements',
+      pl: 'TODO'
     }
   },
-  areFullEqualArrays: {
+  areArraysStrictEqual: {
     parameters: ['array1', 'array2'],
     description: {
-      en: 'Checks if arrays are the same and in the following order'
+      en: 'Checks if arrays are the same and in the following order',
+      pl: 'TODO'
     }
   }
 }

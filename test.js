@@ -90,8 +90,8 @@ const {
   hasWords,
   isInstanceOf,
   isPlainObject,
-  areEqualArrays,
-  areFullEqualArrays
+  areArraysEqual,
+  areArraysStrictEqual
 } = require('.')
 
 deepStrictEqual(isPositive(1), true)
@@ -560,12 +560,16 @@ deepStrictEqual(isPlainObject(function () {}), false)
 deepStrictEqual(isPlainObject([]), false)
 deepStrictEqual(isPlainObject(null), false)
 
-deepStrictEqual(areEqualArrays([], []), true)
-deepStrictEqual(areEqualArrays([1, 2, 3], [1, 2, 3]), true)
-deepStrictEqual(areEqualArrays([1, 3, 2], [1, 2, 3]), true)
-deepStrictEqual(areEqualArrays([1, 3, 2, 4], [1, 2, 3]), false)
+deepStrictEqual(areArraysEqual([], []), true)
+deepStrictEqual(areArraysEqual([1, 2, 3], [1, 2, 3]), true)
+deepStrictEqual(areArraysEqual([1, 3, 2], [1, 2, 3]), true)
+deepStrictEqual(areArraysEqual([1, 3, 2, 4], [1, 2, 3]), false)
+deepStrictEqual(areArraysEqual([1, 'a', 3], ['a', 2, 3]), false)
+deepStrictEqual(areArraysEqual(['a', 'b', 3], [3, 'a', 'b']), true)
 
-deepStrictEqual(areFullEqualArrays([], []), true)
-deepStrictEqual(areFullEqualArrays([1, 2, 3], [1, 2, 3]), true)
-deepStrictEqual(areFullEqualArrays([1, 3, 2], [1, 2, 3]), false)
-deepStrictEqual(areFullEqualArrays([1, 3, 2, 4], [1, 2, 3]), false)
+deepStrictEqual(areArraysStrictEqual([], []), true)
+deepStrictEqual(areArraysStrictEqual([1, 2, 3], [1, 2, 3]), true)
+deepStrictEqual(areArraysStrictEqual([1, 3, 2], [1, 2, 3]), false)
+deepStrictEqual(areArraysStrictEqual([1, 3, 2, 4], [1, 2, 3]), false)
+deepStrictEqual(areArraysStrictEqual([1, 'a', 3], ['a', 2, 3]), false)
+deepStrictEqual(areArraysStrictEqual(['a', 'b', 3], ['a', 'b', 3]), true)
