@@ -968,7 +968,8 @@ module.exports = {
       },
       {
         input: [[1, 2, 3], [1, 2, 3]],
-        code: 'areArraysStrictEqual([1, 2, 3], [1, 2, 3])'
+        code: 'areArraysStrictEqual([1, 2, 3], [1, 2, 3])',
+        output: true
       }
     ]
   }

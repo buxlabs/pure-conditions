@@ -646,22 +646,22 @@ module.exports = {
   isPlainObject: {
     parameters: ['value'],
     description: {
-      en: 'Checks if passed value is an object',
+      en: 'Checks if passed value is an object.',
       pl: 'Sprawdza czy przekazana wartość jest obiektem.'
     }
   },
   areArraysEqual: {
     parameters: ['array1', 'array2'],
     description: {
-      en: 'Checks if the arrays have the same elements',
-      pl: 'TODO'
+      en: 'Checks if arrays do have the same elements in any order.',
+      pl: 'Sprawdza czy tablice posiadają takie same elementy, w jakiejkolwiek kolejności.'
     }
   },
   areArraysStrictEqual: {
     parameters: ['array1', 'array2'],
     description: {
-      en: 'Checks if arrays are the same and in the following order',
-      pl: 'TODO'
+      en: 'Checks if arrays do have the same elements in the same order',
+      pl: 'Sprawdza czy tablice posiadają takie same elementy, w takiej samej kolejności'
     }
   }
 }

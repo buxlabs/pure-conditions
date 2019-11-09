@@ -417,9 +417,9 @@ module.exports = {
       return false
     }
 
-    const newArray1 = array1.slice().sort()
-    const newArray2 = array2.slice().sort()
-    return newArray1.every((value, index) => value === newArray2[index])
+    const sortedArray1 = array1.slice().sort()
+    const sortedArray2 = array2.slice().sort()
+    return sortedArray1.every((value, index) => value === sortedArray2[index])
   },
   areArraysStrictEqual (array1, array2) {
     return array1.length === array2.length && array1.every((value, index) => value === array2[index])
