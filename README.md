@@ -48,7 +48,7 @@ isEmail('foobar@gmail.com') // true
 
 ## Maintainers
 
-[@emilos](https://github.com/emilos), [@pkonieczniak](https://github.com/pkonieczniak).
+[@emilos](https://github.com/emilos)
 
 ## Contributing
 Pull requests and issues are always welcome.
