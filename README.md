@@ -1,6 +1,7 @@
 # pure-conditions
 
-![npm](https://img.shields.io/npm/v/pure-conditions.svg) ![build](https://img.shields.io/codeship/bbb473f0-1299-0137-20cc-7e0d9fcdbe57/master.svg)
+[![npm](https://img.shields.io/npm/v/pure-conditions.svg)](https://www.npmjs.com/package/pure-conditions)
+[![build](https://github.com/buxlabs/pure-conditions/workflows/build/badge.svg)](https://github.com/buxlabs/pure-conditions/actions)
 
 > A set of pure functions.
 
