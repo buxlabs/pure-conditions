@@ -926,7 +926,7 @@ module.exports = {
     [
       {
         input: [['foo', 'bar'], Array],
-        code: 'isInstanceOf(["foo", "bar"])'
+        code: 'isInstanceOf(["foo", "bar"], Array)'
       }
     ]
   },
