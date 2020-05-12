@@ -1,7 +1,7 @@
 const methods = require('..')
 const documentation = require('./documentation')
 
-for (let method in methods) {
+for (const method in methods) {
   if (!documentation[method]) {
     throw new Error(`Documentation missing for: ${method}`)
   }

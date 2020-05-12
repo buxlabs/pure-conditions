@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "node test.js && node docs/generate.js && node fixtures/output.js",
-    "lint": "eslint *.js **/*.js",
-    "lint:fix": "eslint *.js **/*.js --fix"
+    "lint": "standard"
   },
   "repository": {
     "type": "git",
@@ -34,11 +33,6 @@
   },
   "homepage": "https://github.com/buxlabs/pure-conditions#readme",
   "devDependencies": {
-    "eslint": "^5.10.0",
-    "eslint-config-standard": "^12.0.0",
-    "eslint-plugin-import": "^2.14.0",
-    "eslint-plugin-node": "^8.0.0",
-    "eslint-plugin-promise": "^4.0.1",
-    "eslint-plugin-standard": "^4.0.0"
+    "standard": "^14.3.4"
   }
 }

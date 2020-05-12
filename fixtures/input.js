@@ -54,10 +54,6 @@ module.exports = {
       {
         input: [undefined],
         code: 'isUndefined(undefined)'
-      },
-      {
-        input: [void 0],
-        code: 'isUndefined(void 0)'
       }
     ]
   },
@@ -259,7 +255,7 @@ module.exports = {
     examples:
     [
       {
-        input: [new Map([ ['foo', 'bar'] ])],
+        input: [new Map([['foo', 'bar']])],
         code: 'isMap(new Map([ ["foo", "bar"] ]))'
       }
     ]
@@ -468,7 +464,7 @@ module.exports = {
     examples:
     [
       {
-        input: [ { foo: function () {} }, 'foo' ],
+        input: [{ foo: function () {} }, 'foo'],
         code: 'respondsTo({ foo: function () {} }, "foo")'
       }
     ]

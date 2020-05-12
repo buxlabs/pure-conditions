@@ -12,10 +12,10 @@ module.exports = {
     return number === Number.POSITIVE_INFINITY || number === Number.NEGATIVE_INFINITY
   },
   isPresent (value) {
-    return value !== void 0
+    return value !== undefined
   },
   isUndefined (value) {
-    return value === void 0
+    return value === undefined
   },
   isNull (value) {
     return value === null
@@ -390,8 +390,8 @@ module.exports = {
   },
   hasKeys (object) {
     if (object instanceof Map || object instanceof Set) return !!object.size
-    for (let property in object) {
-      if (object.hasOwnProperty(property)) return true
+    for (const property in object) {
+      if (Object.prototype.hasOwnProperty.call(object, property)) return true
     }
     return false
   },

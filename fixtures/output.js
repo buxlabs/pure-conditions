@@ -1,11 +1,11 @@
 const methods = require('..')
 const input = require('./input')
 
-for (let method in methods) {
-  let fn = methods[method]
-  for (let example of input[method].examples) {
+for (const method in methods) {
+  const fn = methods[method]
+  for (const example of input[method].examples) {
     if (!example.code) throw new Error(`Missing example for example ${method}, ${input}`)
-    if (!example.hasOwnProperty('output')) {
+    if (!Object.prototype.hasOwnProperty.call(example, 'output')) {
       example.output = fn(...example.input)
     }
   }
