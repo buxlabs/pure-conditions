@@ -1,3 +1,5 @@
+const isNumeric = require('./isNumeric')
+
 module.exports = {
   isPositive (number) {
     return number > 0
@@ -62,10 +64,7 @@ module.exports = {
   isDecimal (value) {
     return value % 1 !== 0
   },
-  isNumeric (value) {
-    const type = typeof value
-    return (type === 'string' || type === 'number') && !isNaN(Number(value))
-  },
+  isNumeric,
   isString (value) {
     return Object.prototype.toString.call(value) === '[object String]'
   },
