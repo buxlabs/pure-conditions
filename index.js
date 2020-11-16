@@ -51,6 +51,48 @@ const isExclusiveAlternative = require('./isExclusiveAlternative')
 const isConjunction = require('./isConjunction')
 const isEquals = require('./isEquals')
 const notEqual = require('./notEqual')
+const isGreaterThanOrEqual = require('./isGreaterThanOrEqual')
+const includes = require('./includes')
+const matches = require('./matches')
+const isBitwiseAlternative = require('./isBitwiseAlternative')
+const isBitwiseConjunction = require('./isBitwiseConjunction')
+const isBitwiseAlternativeNegation = require('./isBitwiseAlternativeNegation')
+const isBitwiseNegation    = require('./isBitwiseNegation')
+const haveMoreThan = require('./haveMoreThan')
+const have = require('./have')
+const haveLessThan = require('./haveLessThan')
+const isBetween = require('./isBetween')
+const isLessThan = require('./isLessThan')
+const isGreaterThan = require('./isGreaterThan')
+const isLessThanOrEqual = require('./isLessThanOrEqual')
+const hasLengthOf = require('./hasLengthOf')
+const hasLengthOfAtLeast = require('./hasLengthOfAtLeast')
+const hasLengthOfAtMost = require('./hasLengthOfAtMost')
+const isIn = require('./isIn')
+const hasExtension = require('./hasExtension')
+const isAudio = require('./isAudio')
+const isVideo = require('./isVideo')
+const isImage = require('./isImage')
+const isEmptyArray = require('./isEmptyArray')
+const isEmptyObject = require('./isEmptyObject')
+const isEmptySet = require('./isEmptySet')
+const isPhone = require('./isPhone')
+const isMobile = require('./isMobile')
+const isTablet = require('./isTablet')
+const isComputer = require('./isComputer')
+const isNaN = require('./isNaN')
+const hasTypeOf = require('./hasTypeOf')
+const isFunction = require('./isFunction')
+const isError = require('./isError')
+const isExtensible = require('./isExtensible')
+const hasKeys = require('./hasKeys')
+const isMissing = require('./isMissing')
+const exists = require('./exists')
+const hasWords = require('./hasWords')
+const isInstanceOf = require('./isInstanceOf')
+const isPlainObject = require('./isPlainObject')
+const areArraysEqual = require('./areArraysEqual')
+const areArraysStrictEqual = require('./areArraysStrictEqual')
 
 module.exports = {
   isPositive,
@@ -106,258 +148,46 @@ module.exports = {
   isConjunction,
   isEquals,
   notEqual,
-  isGreaterThanOrEqual (value1, value2) {
-    return value1 >= value2
-  },
-  includes (value1, value2) {
-    return value1.includes(value2)
-  },
-  matches (string, regExp) {
-    return !!string.match(regExp)
-  },
-  isBitwiseAlternative (value1, value2) {
-    return !!(value1 | value2)
-  },
-  isBitwiseConjunction (value1, value2) {
-    return !!(value1 & value2)
-  },
-  isBitwiseAlternativeNegation (value1, value2) {
-    return !!((value1 && !value2) || (!value1 && value2))
-  },
-  isBitwiseNegation (value) {
-    return !!(~value)
-  },
-  haveMoreThan (value1, value2) {
-    return value1.length > value2
-  },
-  have (value, number) {
-    return (!number && value.length) > 0 || (value.length === number)
-  },
-  haveLessThan (value, number) {
-    return value.length < number
-  },
-  isBetween (value1, value2, value3) {
-    return value1 >= value2 && value1 <= value3
-  },
-  isLessThan (number1, number2) {
-    return number1 < number2
-  },
-  isGreaterThan (number1, number2) {
-    return number1 > number2
-  },
-  isLessThanOrEqual (number1, number2) {
-    return number1 <= number2
-  },
-  hasLengthOf (value, number) {
-    return value.length === number
-  },
-  hasLengthOfAtLeast (value, number) {
-    return value.length >= number
-  },
-  hasLengthOfAtMost (value, number) {
-    return value.length <= number
-  },
-  isIn (value1, value2) {
-    return value2.includes(value1)
-  },
-  hasExtension (path, extension) {
-    if (!extension) {
-      const index = path.lastIndexOf('.')
-      if (index === -1) { return false }
-      const ending = path.substr(index + 1)
-      if (ending.startsWith('/') || ending.startsWith('\\')) { return false }
-      return !!ending
-    }
-    if (extension.startsWith('.')) { return path.endsWith(extension) }
-    return path.endsWith(`.${extension}`)
-  },
-  isAudio (string) {
-    const extensions = [
-      '.3gp',
-      '.aa',
-      '.aac',
-      '.aax',
-      '.act',
-      '.aiff',
-      '.amr',
-      '.ape',
-      '.au',
-      '.awb',
-      '.dct',
-      '.dss',
-      '.dvf',
-      '.flac',
-      '.gsm',
-      '.iklax',
-      '.ivs',
-      '.m4a',
-      '.m4b',
-      '.m4p',
-      '.mmf',
-      '.mp3',
-      '.mpc',
-      '.msv',
-      '.nsf',
-      '.ogg',
-      '.oga',
-      '.mogg',
-      '.opus',
-      '.ra',
-      '.rm',
-      '.raw',
-      '.sln',
-      '.tta',
-      '.vox',
-      '.wav',
-      '.wma',
-      '.wv',
-      '.webm',
-      '.8svx'
-    ]
-    return extensions.includes(string.substr(string.lastIndexOf('.')))
-  },
-  isVideo (string) {
-    const extensions = [
-      '.webm',
-      '.mkv',
-      '.flv',
-      '.flv',
-      '.vob',
-      '.ogv',
-      '.ogg',
-      '.drc',
-      '.gifv',
-      '.mng',
-      '.avi',
-      '.mov',
-      '.qt',
-      '.wmv',
-      '.yuv',
-      '.rm',
-      '.rmvb',
-      '.asf',
-      '.amv',
-      '.mp4',
-      '.m4v',
-      '.mpg',
-      '.mp2',
-      '.mpeg',
-      '.mpe',
-      '.mpv',
-      '.mpg',
-      '.mpeg',
-      '.m2v',
-      '.m4v',
-      '.svi',
-      '.3gp',
-      '.3g2',
-      '.mxf',
-      '.roq',
-      '.nsv',
-      '.flv',
-      '.f4v',
-      '.f4p',
-      '.f4a',
-      '.f4b'
-    ]
-    return extensions.includes(string.substr(string.lastIndexOf('.')))
-  },
-  isImage (string) {
-    const extensions = [
-      '.tif',
-      '.tiff',
-      '.gif',
-      '.jpeg',
-      '.jpg',
-      '.jif',
-      '.jfif',
-      '.jp2',
-      '.jpx',
-      '.j2k',
-      '.j2c',
-      '.fpx',
-      '.pcd',
-      '.png',
-      '.svg',
-      '.bmp'
-    ]
-    return extensions.includes(string.substr(string.lastIndexOf('.')))
-  },
-  isEmptyArray (array) {
-    return !array.length
-  },
-  isEmptyObject (object) {
-    if (!object) return false
-    return Object.keys(object).length === 0 && object.constructor === Object
-  },
-  isEmptySet (set) {
-    return !set.size
-  },
-  isPhone (string) {
-    if (!string) return false
-    const regExp = /^(\+?\(?\d{1,3}\)?(-|\s)?)?(\d{2,3}(-|\s)?){3}$/
-    return regExp.test(string)
-  },
-  isMobile () {
-    return window.matchMedia('(max-width: 767px)').matches
-  },
-  isTablet () {
-    return window.matchMedia('(min-width: 768px) and (max-width: 991px)').matches
-  },
-  isComputer () {
-    return window.matchMedia('(min-width: 992px)').matches
-  },
-  isNaN (value) {
-    return Number.isNaN(value)
-  },
-  hasTypeOf (value, type) {
-    // eslint-disable-next-line valid-typeof
-    return typeof value === type
-  },
-  isFunction (value) {
-    return typeof value === 'function'
-  },
-  isError (object) {
-    return object instanceof Error
-  },
-  isExtensible (object) {
-    return Object.isExtensible(object)
-  },
-  hasKeys (object) {
-    if (object instanceof Map || object instanceof Set) return !!object.size
-    for (const property in object) {
-      if (Object.prototype.hasOwnProperty.call(object, property)) return true
-    }
-    return false
-  },
-  isMissing (object) {
-    return typeof object === 'undefined'
-  },
-  exists (object) {
-    return typeof object !== 'undefined'
-  },
-  hasWords (string, words) {
-    const result = string.match(/\w+/g)
-    if (!result || !result.length) return false
-    if (!words) return !!result.length
-    return result.length === words
-  },
-  isInstanceOf (object1, object2) {
-    return object1 instanceof object2
-  },
-  isPlainObject (object) {
-    return Object.prototype.toString.call(object) === '[object Object]'
-  },
-  areArraysEqual (array1, array2) {
-    if (array1.length !== array2.length) {
-      return false
-    }
-
-    const sortedArray1 = array1.slice().sort()
-    const sortedArray2 = array2.slice().sort()
-    return sortedArray1.every((value, index) => value === sortedArray2[index])
-  },
-  areArraysStrictEqual (array1, array2) {
-    return array1.length === array2.length && array1.every((value, index) => value === array2[index])
-  }
+  isGreaterThanOrEqual,
+  includes,
+  matches,
+  isBitwiseAlternative,
+  isBitwiseConjunction,
+  isBitwiseAlternativeNegation,
+  isBitwiseNegation,
+  haveMoreThan,
+  have,
+  haveLessThan,
+  isBetween,
+  isLessThan,
+  isGreaterThan,
+  isLessThanOrEqual,
+  hasLengthOf,
+  hasLengthOfAtLeast,
+  hasLengthOfAtMost,
+  isIn,
+  hasExtension,
+  isAudio,
+  isVideo,
+  isImage,
+  isEmptyArray,
+  isEmptyObject,
+  isEmptySet,
+  isPhone,
+  isMobile,
+  isTablet,
+  isComputer,
+  isNaN,
+  hasTypeOf,
+  isFunction,
+  isError,
+  isExtensible,
+  hasKeys,
+  isMissing,
+  exists,
+  hasWords,
+  isInstanceOf,
+  isPlainObject,
+  areArraysEqual,
+  areArraysStrictEqual
 }
