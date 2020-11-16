@@ -1,12 +1,10 @@
 const isNumeric = require('./isNumeric')
+const isPositive = require('./isPositive')
+const isNegative = require('./isNegative')
 
 module.exports = {
-  isPositive (number) {
-    return number > 0
-  },
-  isNegative (number) {
-    return number < 0
-  },
+  isPositive,
+  isNegative,
   isFinite (number) {
     return isFinite(number)
   },
