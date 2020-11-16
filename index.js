@@ -1,173 +1,111 @@
 const isNumeric = require('./isNumeric')
 const isPositive = require('./isPositive')
 const isNegative = require('./isNegative')
+const isFinite = require('./isFinite')
+const isInfinite = require('./isInfinite')
+const isPresent = require('./isPresent')
+const isUndefined = require('./isUndefined')
+const isNull = require('./isNull')
+const isEven = require('./isEven')
+const isOdd = require('./isOdd')
+const isEmpty = require('./isEmpty')
+const isAlpha = require('./isAlpha')
+const isAlphaNumeric = require('./isAlphaNumeric')
+const isObject = require('./isObject')
+const isFrozen = require('./isFrozen')
+const isSealed = require('./isSealed')
+const isRegExp = require('./isRegExp')
+const isNumber = require('./isNumber')
+const isDigit = require('./isDigit')
+const isDecimal = require('./isDecimal')
+const isString = require('./isString')
+const isBoolean = require('./isBoolean')
+const isArray = require('./isArray')
+const isSymbol = require('./isSymbol')
+const isMap = require('./isMap')
+const isWeakMap = require('./isWeakMap')
+const isSet = require('./isSet')
+const isWeakSet = require('./isWeakSet')
+const isDate = require('./isDate')
+const isTruthy = require('./isTruthy')
+const isFalsy = require('./isFalsy')
+const hasWhitespace = require('./hasWhitespace')
+const hasNewLine = require('./hasNewLine')
+const hasNumber = require('./hasNumber')
+const hasNumbers = require('./hasNumbers')
+const hasDuplicates = require('./hasDuplicates')
+const isPrime = require('./isPrime')
+const isPalindrome = require('./isPalindrome')
+const isEmail = require('./isEmail')
+const isUrl = require('./isUrl')
+const haveMany = require('./haveMany')
+const isMultiple = require('./isMultiple')
+const isDivisible = require('./isDivisible')
+const isSoonerThan = require('./isSoonerThan')
+const isLaterThan = require('./isLaterThan')
+const respondsTo = require('./respondsTo')
+const startsWith = require('./startsWith')
+const endsWith = require('./endsWith')
+const isAlternative = require('./isAlternative')
+const isExclusiveAlternative = require('./isExclusiveAlternative')
+const isConjunction = require('./isConjunction')
+const isEquals = require('./isEquals')
+const notEqual = require('./notEqual')
 
 module.exports = {
   isPositive,
   isNegative,
-  isFinite (number) {
-    return isFinite(number)
-  },
-  isInfinite (number) {
-    return number === Number.POSITIVE_INFINITY || number === Number.NEGATIVE_INFINITY
-  },
-  isPresent (value) {
-    return value !== undefined
-  },
-  isUndefined (value) {
-    return value === undefined
-  },
-  isNull (value) {
-    return value === null
-  },
-  isEven (number) {
-    return number % 2 === 0
-  },
-  isOdd (number) {
-    return number % 2 !== 0
-  },
-  isEmpty (value) {
-    const type = Object.prototype.toString.call(value).substr(8).replace(']', '')
-    return value == null || (
-      ((type === 'Array' || type === 'String') && (value.length === 0)) ||
-      ((type === 'Set' || type === 'Map') && (value.size === 0)) ||
-      ((type === 'Object' || type === 'Function') && (Object.keys(value).length === 0))
-    )
-  },
-  isAlpha (string) {
-    return [...string].every(char => /[A-Za-z]/.test(char))
-  },
-  isAlphaNumeric (string) {
-    return [...string].every(char => /[A-Za-z0-9]/.test(char))
-  },
-  isObject (value) {
-    const type = typeof value
-    return (type === 'function' || type === 'object') && !!value
-  },
-  isFrozen (object) {
-    return Object.isFrozen(object)
-  },
-  isSealed (object) {
-    return Object.isSealed(object)
-  },
-  isRegExp (value) {
-    return Object.prototype.toString.call(value) === '[object RegExp]'
-  },
-  isNumber (value) {
-    return Object.prototype.toString.call(value) === '[object Number]'
-  },
-  isDigit (value) {
-    return /^[0-9]{1}$/.test(value)
-  },
-  isDecimal (value) {
-    return value % 1 !== 0
-  },
+  isFinite,
+  isInfinite,
+  isPresent,
+  isUndefined,
+  isNull,
+  isEven,
+  isOdd,
+  isEmpty,
+  isAlpha,
+  isAlphaNumeric,
+  isObject,
+  isFrozen,
+  isSealed,
+  isRegExp,
+  isNumber,
+  isDigit,
+  isDecimal,
   isNumeric,
-  isString (value) {
-    return Object.prototype.toString.call(value) === '[object String]'
-  },
-  isBoolean (value) {
-    return Object.prototype.toString.call(value) === '[object Boolean]'
-  },
-  isArray (value) {
-    return Array.isArray(value)
-  },
-  isSymbol (value) {
-    return Object.prototype.toString.call(value) === '[object Symbol]'
-  },
-  isMap (value) {
-    return Object.prototype.toString.call(value) === '[object Map]'
-  },
-  isWeakMap (value) {
-    return Object.prototype.toString.call(value) === '[object WeakMap]'
-  },
-  isSet (value) {
-    return Object.prototype.toString.call(value) === '[object Set]'
-  },
-  isWeakSet (value) {
-    return Object.prototype.toString.call(value) === '[object WeakSet]'
-  },
-  isDate (value) {
-    return Object.prototype.toString.call(value) === '[object Date]'
-  },
-  isTruthy (value) {
-    return !!value
-  },
-  isFalsy (value) {
-    return !value
-  },
-  hasWhitespace (string) {
-    return /\s|&nbsp;/g.test(string)
-  },
-  hasNewLine (string) {
-    return /\n/g.test(string)
-  },
-  hasNumber (value) {
-    return typeof value === 'number' ? true : Object.values(value).some(element => typeof element === 'number')
-  },
-  hasNumbers (value) {
-    return Object.values(value).filter(element => typeof element === 'number').length > 1
-  },
-  hasDuplicates (value) {
-    return new Set(value).size !== value.length
-  },
-  isPrime (number) {
-    if (number === 1) return false
-    for (let i = 2; i < number; i++) if (number % i === 0) return false
-    return true
-  },
-  isPalindrome (string) {
-    string = string.toLowerCase()
-    return string.split('').reverse().join('') === string
-  },
-  isEmail (string) {
-    string = string.toLowerCase()
-    const regExp = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-    return regExp.test(string)
-  },
-  isUrl (string) {
-    const regExp = /((([A-Za-z]{3,9}:(?:\/\/)?)(?:[-;:&=+$,\w]+@)?[A-Za-z0-9.-]+|(?:www\.|[-;:&=+$,\w]+@)[A-Za-z0-9.-]+)((?:\/[+~%/.\w\-_]*)?\??(?:[-+=&;%@.\w_]*)#?(?:[.!/\\\w]*))?)/
-    return regExp.test(string)
-  },
-  haveMany (value) {
-    return value.length > 1
-  },
-  isMultiple (number1, number2) {
-    return number1 % number2 === 0
-  },
-  isDivisible (number1, number2) {
-    return number1 % number2 === 0
-  },
-  isSoonerThan (date1, date2) {
-    return date1 < date2
-  },
-  isLaterThan (date1, date2) {
-    return date1 > date2
-  },
-  respondsTo (object, string) {
-    return !!(object[string] && typeof object[string] === 'function')
-  },
-  startsWith (string1, string2) {
-    return string1.startsWith(string2)
-  },
-  endsWith (string1, string2) {
-    return string1.endsWith(string2)
-  },
-  isAlternative (value1, value2) {
-    return !!(value1 || value2)
-  },
-  isExclusiveAlternative (value1, value2) {
-    return !!((value1 && !value2) || (!value1 && value2))
-  },
-  isConjunction (value1, value2) {
-    return !!(value1 && value2)
-  },
-  isEquals (value1, value2) {
-    return value1 === value2
-  },
-  notEqual (value1, value2) {
-    return value1 !== value2
-  },
+  isString,
+  isBoolean,
+  isArray,
+  isSymbol,
+  isMap,
+  isWeakMap,
+  isSet,
+  isWeakSet,
+  isDate,
+  isTruthy,
+  isFalsy,
+  hasWhitespace,
+  hasNewLine,
+  hasNumber,
+  hasNumbers,
+  hasDuplicates,
+  isPrime,
+  isPalindrome,
+  isEmail,
+  isUrl,
+  haveMany,
+  isMultiple,
+  isDivisible,
+  isSoonerThan,
+  isLaterThan,
+  respondsTo,
+  startsWith,
+  endsWith,
+  isAlternative,
+  isExclusiveAlternative,
+  isConjunction,
+  isEquals,
+  notEqual,
   isGreaterThanOrEqual (value1, value2) {
     return value1 >= value2
   },
