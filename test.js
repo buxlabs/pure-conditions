@@ -89,8 +89,7 @@ const {
   exists,
   hasWords,
   isInstanceOf,
-  isPlainObject,
-  areArraysStrictEqual
+  isPlainObject
 } = require('.')
 
 deepStrictEqual(isPositive(1), true)
