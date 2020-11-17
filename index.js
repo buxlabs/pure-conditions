@@ -91,8 +91,6 @@ const exists = require('./exists')
 const hasWords = require('./hasWords')
 const isInstanceOf = require('./isInstanceOf')
 const isPlainObject = require('./isPlainObject')
-const areArraysEqual = require('./areArraysEqual')
-const areArraysStrictEqual = require('./areArraysStrictEqual')
 
 module.exports = {
   isPositive,
@@ -187,7 +185,5 @@ module.exports = {
   exists,
   hasWords,
   isInstanceOf,
-  isPlainObject,
-  areArraysEqual,
-  areArraysStrictEqual
+  isPlainObject
 }
