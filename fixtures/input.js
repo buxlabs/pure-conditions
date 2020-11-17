@@ -527,7 +527,27 @@ module.exports = {
     [
       {
         input: ['foo', 'foo'],
-        code: 'isEquals("foo", "foo")'
+        code: 'isEqual("foo", "foo")'
+      },
+      {
+        input: [[1, 3, 2], [1, 2, 3]],
+        code: 'isEqual([1, 3, 2], [1, 2, 3])',
+        output: true
+      },
+      {
+        input: [[1, 2, 3], [1, 2, 3]],
+        code: 'isEqual([1, 2, 3], [1, 2, 3])',
+        output: true
+      },
+      {
+        input: [[1, 3, 2], [1, 2, 3]],
+        code: 'isEqual([1, 3, 2], [1, 2, 3], true)',
+        output: false
+      },
+      {
+        input: [[1, 2, 3], [1, 2, 3]],
+        code: 'isEqual([1, 2, 3], [1, 2, 3], true)',
+        output: true
       }
     ]
   },
@@ -936,36 +956,6 @@ module.exports = {
       {
         input: [[]],
         code: 'isPlainObject([])'
-      }
-    ]
-  },
-  areArraysEqual: {
-    examples:
-    [
-      {
-        input: [[1, 3, 2], [1, 2, 3]],
-        code: 'areArraysEqual([1, 3, 2], [1, 2, 3])',
-        output: true
-      },
-      {
-        input: [[1, 2, 3], [1, 2, 3]],
-        code: 'areArraysEqual([1, 2, 3], [1, 2, 3])',
-        output: true
-      }
-    ]
-  },
-  areArraysStrictEqual: {
-    examples:
-    [
-      {
-        input: [[1, 3, 2], [1, 2, 3]],
-        code: 'areArraysStrictEqual([1, 3, 2], [1, 2, 3])',
-        output: false
-      },
-      {
-        input: [[1, 2, 3], [1, 2, 3]],
-        code: 'areArraysStrictEqual([1, 2, 3], [1, 2, 3])',
-        output: true
       }
     ]
   }
