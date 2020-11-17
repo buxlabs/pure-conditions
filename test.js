@@ -52,7 +52,7 @@ const {
   isAlternative,
   isExclusiveAlternative,
   isConjunction,
-  isEquals,
+  isEqual,
   notEqual,
   isGreaterThanOrEqual,
   includes,
@@ -344,10 +344,10 @@ deepStrictEqual(isExclusiveAlternative(true, false), true)
 deepStrictEqual(isExclusiveAlternative(true, true), false)
 deepStrictEqual(isExclusiveAlternative(false, false), false)
 
-deepStrictEqual(isEquals(42, 42), true)
-deepStrictEqual(isEquals('foo', 'foo'), true)
-deepStrictEqual(isEquals('qux', 'foo'), false)
-deepStrictEqual(isEquals(42, '42'), false)
+deepStrictEqual(isEqual(42, 42), true)
+deepStrictEqual(isEqual('foo', 'foo'), true)
+deepStrictEqual(isEqual('qux', 'foo'), false)
+deepStrictEqual(isEqual(42, '42'), false)
 
 deepStrictEqual(notEqual('qux', 'foo'), true)
 deepStrictEqual(notEqual(42, '42'), true)

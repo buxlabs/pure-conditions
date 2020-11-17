@@ -49,7 +49,7 @@ const endsWith = require('./endsWith')
 const isAlternative = require('./isAlternative')
 const isExclusiveAlternative = require('./isExclusiveAlternative')
 const isConjunction = require('./isConjunction')
-const isEquals = require('./isEquals')
+const isEqual = require('./isEqual')
 const notEqual = require('./notEqual')
 const isGreaterThanOrEqual = require('./isGreaterThanOrEqual')
 const includes = require('./includes')
@@ -146,7 +146,7 @@ module.exports = {
   isAlternative,
   isExclusiveAlternative,
   isConjunction,
-  isEquals,
+  isEqual,
   notEqual,
   isGreaterThanOrEqual,
   includes,

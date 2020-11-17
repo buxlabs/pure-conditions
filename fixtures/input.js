@@ -522,7 +522,7 @@ module.exports = {
       }
     ]
   },
-  isEquals: {
+  isEqual: {
     examples:
     [
       {

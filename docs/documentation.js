@@ -356,7 +356,7 @@ module.exports = {
       pl: 'Zwraca prawdę gdy obie z przekazanych wartości są prawdziwe.'
     }
   },
-  isEquals: {
+  isEqual: {
     parameters: ['value1', 'value2'],
     description: {
       en: 'Checks if values are equal.',
