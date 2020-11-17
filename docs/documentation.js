@@ -31,7 +31,7 @@ module.exports = {
     parameters: ['value'],
     description: {
       en: 'Checks if the value is present (different than undefined).',
-      pl: 'Sprawdza czy wartość jest obecna (różna od undefined).'
+      pl: 'Sprawdza czy wartość jest zdefiniowana.'
     }
   },
   isUndefined: {
@@ -45,7 +45,7 @@ module.exports = {
     parameters: ['value'],
     description: {
       en: 'Checks if the value is null.',
-      pl: 'Sprawdza czy wartość jest null\'em.'
+      pl: 'Sprawdza czy wartość jest równa null.'
     }
   },
   isEven: {
@@ -87,7 +87,7 @@ module.exports = {
     parameters: ['value'],
     description: {
       en: 'Checks if the value is an object.',
-      pl: 'Sprawdza czy przekazana wartość jest obiektem.'
+      pl: 'Sprawdza czy wartość jest obiektem.'
     }
   },
   isFrozen: {
@@ -170,7 +170,7 @@ module.exports = {
   isMap: {
     parameters: ['value'],
     description: {
-      en: 'Checks if the value is an map.',
+      en: 'Checks if the value is a map.',
       pl: 'Sprawdza czy przekazana wartość jest mapą.'
     }
   },
@@ -185,7 +185,7 @@ module.exports = {
     parameters: ['value'],
     description: {
       en: 'Checks if the value is an weakset.',
-      pl: 'Sprawdza czy przekazana wartość jest słabą zbiorem.'
+      pl: 'Sprawdza czy przekazana wartość jest słabym zbiorem.'
     }
   },
   isSet: {
@@ -199,7 +199,7 @@ module.exports = {
     parameters: ['value'],
     description: {
       en: 'Checks if the value is an date.',
-      pl: 'Sprawdza czy przekazana wartość datą.'
+      pl: 'Sprawdza czy przekazana wartość jest datą.'
     }
   },
   isTruthy: {
@@ -268,14 +268,14 @@ module.exports = {
   isEmail: {
     parameters: ['string'],
     description: {
-      en: 'Checks if the value is an email.',
+      en: 'Checks if the string is an email.',
       pl: 'Sprawdza czy łańcuch znaków jest adresem email.'
     }
   },
   isUrl: {
     parameters: ['string'],
     description: {
-      en: 'Checks if the value is an url.',
+      en: 'Checks if the string is an url.',
       pl: 'Sprawdza czy łańcuch znaków jest poprawnym adresem url.'
     }
   },
@@ -339,21 +339,21 @@ module.exports = {
     parameters: ['value1', 'value2'],
     description: {
       en: 'Returns true when one value from passed values is truthy.',
-      pl: 'Zwraca wartość logiczną z alternatywy pierwszej wartości oraz drugiej wartości.'
+      pl: 'Zwraca wartość logiczną prawda z alternatywy pierwszej wartości oraz drugiej wartości.'
     }
   },
   isExclusiveAlternative: {
     parameters: ['value1', 'value2'],
     description: {
       en: 'Returns true when one value from passed values is truthy and second is falsy.',
-      pl: 'Zwraca prawdę gdy jedna z przekazanych wartości jest prawdziwa, a druga fałszywa.'
+      pl: 'Zwraca wartość logiczną prawda, gdy jedna z przekazanych wartości jest prawdziwa, a druga fałszywa.'
     }
   },
   isConjunction: {
     parameters: ['value1', 'value2'],
     description: {
       en: 'Returns true when both values from passed values are truthy.',
-      pl: 'Zwraca prawdę gdy obie z przekazanych wartości są prawdziwe.'
+      pl: 'Zwraca wartość logiczną prawda, gdy obie z przekazanych wartości są prawdziwe.'
     }
   },
   isEqual: {
@@ -423,14 +423,14 @@ module.exports = {
     parameters: ['value', 'number'],
     description: {
       en: 'Checks if the length of value is greater than number.',
-      pl: 'Sprawdza czy długość przekazanej wartości jest większa niż przekazana liczba.'
+      pl: 'Sprawdza czy długość wartości jest większa niż liczba.'
     }
   },
   have: {
     parameters: ['value', 'number'],
     description: {
       en: 'Checks if the length of value is equal the number.',
-      pl: 'Sprawdza czy długość przekazanej wartości jest równa przekazanej liczbie.'
+      pl: 'Sprawdza czy długość wartości jest równa liczbie.'
     }
   },
   hasExtension: {
@@ -444,14 +444,14 @@ module.exports = {
     parameters: ['value', 'number'],
     description: {
       en: 'Checks if the length of value is smaller than the number.',
-      pl: 'Sprawdza czy długość przekazanej wartości jest większa niż przekazana liczba.'
+      pl: 'Sprawdza czy długość wartości jest większa niż liczba.'
     }
   },
   isBetween: {
     parameters: ['number1', 'number2', 'number3'],
     description: {
       en: 'Checks if first is between second and third number.',
-      pl: 'Sprawdza czy pierwsza liczba jest pomiędzy drugą a trzecią.'
+      pl: 'Sprawdza czy pierwsza liczba jest pomiędzy drugą, a trzecią.'
     }
   },
   isLessThan: {
@@ -471,7 +471,7 @@ module.exports = {
   isLessThanOrEqual: {
     parameters: ['number1', 'number2'],
     description: {
-      en: 'Checks if first number is smaller or equal number2.',
+      en: 'Checks if first number is smaller or equal second.',
       pl: 'Sprawdza czy pierwsza liczba jest mniejsza lub równa drugiej.'
     }
   },
@@ -479,21 +479,21 @@ module.exports = {
     parameters: ['value', 'number'],
     description: {
       en: 'Checks if the length of value is equal the number.',
-      pl: 'Sprawdza czy długość przekazanej wartości jest równa przekazanej liczbie.'
+      pl: 'Sprawdza czy długość wartości jest równa liczbie.'
     }
   },
   hasLengthOfAtLeast: {
     parameters: ['value', 'number'],
     description: {
       en: 'Checks if the length of value is greater or equal the number.',
-      pl: 'Sprawdza czy długość przekazanej wartości jest większa lub równa przekazanej liczbie.'
+      pl: 'Sprawdza czy długość wartości jest większa lub równa liczbie.'
     }
   },
   hasLengthOfAtMost: {
     parameters: ['value', 'number'],
     description: {
       en: 'Checks if the length of value is smaller or equal the number.',
-      pl: 'Sprawdza czy długość przekazanej wartości jest mniejsza lub równa przekazanej liczbie.'
+      pl: 'Sprawdza czy długość wartości jest mniejsza lub równa liczbie.'
     }
   },
   isIn: {
@@ -521,7 +521,7 @@ module.exports = {
     parameters: ['string'],
     description: {
       en: 'Checks if the string is a name of image file.',
-      pl: 'Sprawdza czy łańcuch znaków jest nazwą pliku zdjęcia.'
+      pl: 'Sprawdza czy łańcuch znaków jest nazwą pliku graficznego.'
     }
   },
   isEmptyObject: {
@@ -605,14 +605,14 @@ module.exports = {
     parameters: ['object'],
     description: {
       en: 'Determines if an object can be extend by new properties.',
-      pl: 'Sprawdza czy przekazany obiekt może być rozszerzony o nowe właściwości.'
+      pl: 'Sprawdza czy obiekt może być rozszerzony o nowe właściwości.'
     }
   },
   hasKeys: {
     parameters: ['object'],
     description: {
       en: 'Checks if the passed object has any key.',
-      pl: 'Sprawdza czy przekazany obiekt posiada klucze.'
+      pl: 'Sprawdza czy przekazany obiekt posiada dowolny klucz.'
     }
   },
   isMissing: {
