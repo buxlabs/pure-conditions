@@ -167,8 +167,6 @@ deepStrictEqual(isSealed(isSealed(Object.seal({}))), true)
 deepStrictEqual(isSealed({}), false)
 
 deepStrictEqual(isRegExp(/foo/), true)
-deepStrictEqual(isRegExp(new RegExp('foo')), true)
-deepStrictEqual(isRegExp(new RegExp('foo')), true)
 deepStrictEqual(isRegExp('foo'), false)
 
 deepStrictEqual(isNumber(1), true)
