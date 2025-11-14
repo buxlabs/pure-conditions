@@ -33,6 +33,6 @@
   },
   "homepage": "https://github.com/buxlabs/pure-conditions#readme",
   "devDependencies": {
-    "standard": "^16.0.4"
+    "standard": "^17.1.2"
   }
 }
