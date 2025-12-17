@@ -4,8 +4,7 @@
   "description": "Utility methods for simple conditions",
   "main": "index.js",
   "scripts": {
-    "test": "node test.js && node docs/generate.js && node fixtures/output.js",
-    "lint": "standard"
+    "test": "node test.js && node docs/generate.js && node fixtures/output.js"
   },
   "repository": {
     "type": "git",
@@ -31,8 +30,5 @@
   "bugs": {
     "url": "https://github.com/buxlabs/pure-conditions/issues"
   },
-  "homepage": "https://github.com/buxlabs/pure-conditions#readme",
-  "devDependencies": {
-    "standard": "^16.0.4"
-  }
+  "homepage": "https://github.com/buxlabs/pure-conditions#readme"
 }
