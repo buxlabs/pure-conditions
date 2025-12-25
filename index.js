@@ -77,9 +77,6 @@ const isEmptyArray = require('./isEmptyArray')
 const isEmptyObject = require('./isEmptyObject')
 const isEmptySet = require('./isEmptySet')
 const isPhone = require('./isPhone')
-const isMobile = require('./isMobile')
-const isTablet = require('./isTablet')
-const isComputer = require('./isComputer')
 const isNaN = require('./isNaN')
 const hasTypeOf = require('./hasTypeOf')
 const isFunction = require('./isFunction')
@@ -172,9 +169,6 @@ module.exports = {
   isEmptyObject,
   isEmptySet,
   isPhone,
-  isMobile,
-  isTablet,
-  isComputer,
   isNaN,
   hasTypeOf,
   isFunction,
