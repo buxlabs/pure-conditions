@@ -10,6 +10,7 @@
 - [Background](#background)
 - [Install](#install)
 - [Usage](#usage)
+- [Documentation](#documentation)
 - [Maintainers](#maintainers)
 - [Contributing](#contributing)
 - [License](#license)
@@ -45,6 +46,10 @@ endsWith('foo bar', 'bar') // true
 const { isEmail } = require('pure-conditions')
 isEmail('foobar@gmail.com') // true
 ```
+
+## Documentation
+
+For complete documentation of all methods, see the [GitHub Pages documentation](https://buxlabs.github.io/pure-conditions).
 
 ## Maintainers
 
