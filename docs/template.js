@@ -1,13 +1,36 @@
-const { tag, html, head, meta, title, style, body, div, h1, h2, p, a, input, strong, code, span, script } = require('boxwood')
+const {
+  Html,
+  Head,
+  Meta,
+  Title,
+  Style,
+  Body,
+  Div,
+  H1,
+  H2,
+  P,
+  A,
+  Input,
+  Strong,
+  Code,
+  Span,
+  Script,
+} = require("boxwood");
 
 module.exports = ({ methodNames, documentation, examples }) => {
-  return html({ lang: 'en' }, [
-    head([
-      meta({ charset: 'UTF-8' }),
-      meta({ name: 'viewport', content: 'width=device-width, initial-scale=1.0' }),
-      title('pure-conditions - Documentation'),
-      meta({ name: 'description', content: 'A set of pure functions for simple conditions in JavaScript' }),
-      style(`
+  return Html({ lang: "en" }, [
+    Head([
+      Meta({ charset: "UTF-8" }),
+      Meta({
+        name: "viewport",
+        content: "width=device-width, initial-scale=1.0",
+      }),
+      Title("pure-conditions - Documentation"),
+      Meta({
+        name: "description",
+        content: "A set of pure functions for simple conditions in JavaScript",
+      }),
+      Style(`
     * {
       margin: 0;
       padding: 0;
@@ -22,11 +45,10 @@ module.exports = ({ methodNames, documentation, examples }) => {
     }
     
     .header {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      background: #000333;
       color: white;
-      padding: 3rem 2rem;
+      padding: 4rem 2rem;
       text-align: center;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
     
     .header h1 {
@@ -66,17 +88,7 @@ module.exports = ({ methodNames, documentation, examples }) => {
       padding: 2rem;
     }
     
-    .search-box {
-      margin: 2rem 0;
-      position: sticky;
-      top: 0;
-      background: white;
-      padding: 1rem 0;
-      z-index: 100;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-    
-    .search-box input {
+    #search {
       width: 100%;
       padding: 0.75rem 1rem;
       font-size: 1rem;
@@ -86,7 +98,7 @@ module.exports = ({ methodNames, documentation, examples }) => {
       transition: border-color 0.2s ease;
     }
     
-    .search-box input:focus {
+    #search:focus {
       border-color: #667eea;
     }
     
@@ -184,58 +196,84 @@ module.exports = ({ methodNames, documentation, examples }) => {
         margin-top: 0.5rem;
       }
     }
-      `)
+      `),
     ]),
-    body([
-      div({ class: 'header' }, [
-        h1('pure-conditions'),
-        p('A set of pure functions for simple conditions'),
-        div({ class: 'links' }, [
-          a({ href: 'https://github.com/buxlabs/pure-conditions', target: '_blank' }, 'GitHub'),
-          a({ href: 'https://www.npmjs.com/package/pure-conditions', target: '_blank' }, 'npm')
-        ])
-      ]),
-      div({ class: 'container' }, [
-        div({ class: 'search-box' }, [
-          input({ type: 'text', id: 'search', placeholder: 'Search methods...' })
+    Body([
+      Div({ class: "header" }, [
+        H1("pure-conditions"),
+        P("A set of pure functions for simple conditions"),
+        Div({ class: "links" }, [
+          A(
+            {
+              href: "https://github.com/buxlabs/pure-conditions",
+              target: "_blank",
+            },
+            "GitHub"
+          ),
+          A(
+            {
+              href: "https://www.npmjs.com/package/pure-conditions",
+              target: "_blank",
+            },
+            "npm"
+          ),
         ]),
-        div({ class: 'method-count' }, [
-          strong(methodNames.length.toString()),
-          ' methods available'
+      ]),
+      Div({ class: "container" }, [
+        Input({
+          type: "text",
+          id: "search",
+          placeholder: "Search methods...",
+        }),
+        Div({ class: "method-count" }, [
+          Strong(methodNames.length.toString()),
+          " methods available",
         ]),
-        div({ id: 'methods' }, methodNames.map(methodName => {
-          const doc = documentation[methodName]
-          const exampleData = examples[methodName]
-          
-          if (!doc || !exampleData) {
-            return ''
-          }
-          
-          return div({ class: 'method', id: methodName }, [
-            h2(methodName),
-            p({ class: 'description' }, doc.description.en),
-            div({ class: 'examples' }, exampleData.examples.map(example => {
-              const output = example.output !== undefined ? example.output : 'undefined'
-              const outputStr = typeof output === 'string' ? `"${output}"` : JSON.stringify(output)
-              return div({ class: 'example' }, [
-                code({ class: 'code-block' }, example.code),
-                span({ class: 'result' }, `→ ${outputStr}`)
-              ])
-            }))
-          ])
-        }))
+        Div(
+          { id: "methods" },
+          methodNames.map((methodName) => {
+            const doc = documentation[methodName];
+            const exampleData = examples[methodName];
+
+            if (!doc || !exampleData) {
+              return "";
+            }
+
+            return Div({ class: "method", id: methodName }, [
+              H2(methodName),
+              P({ class: "description" }, doc.description.en),
+              Div(
+                { class: "examples" },
+                exampleData.examples.map((example) => {
+                  const output =
+                    example.output !== undefined ? example.output : "undefined";
+                  const outputStr =
+                    typeof output === "string"
+                      ? `"${output}"`
+                      : JSON.stringify(output);
+                  return Div({ class: "example" }, [
+                    Code({ class: "code-block" }, example.code),
+                    Span({ class: "result" }, `→ ${outputStr}`),
+                  ]);
+                })
+              ),
+            ]);
+          })
+        ),
       ]),
-      div({ class: 'footer' }, [
-        p('pure-conditions is licensed under the MIT License'),
-        p([
-          'Made with ❤️ by ',
-          a({ href: 'https://github.com/emilos', style: 'color: #667eea;' }, '@emilos')
-        ])
+      Div({ class: "footer" }, [
+        P("pure-conditions is licensed under the MIT License"),
+        P([
+          "Made by ",
+          A(
+            { href: "https://github.com/emilos", style: "color: #667eea;" },
+            "@emilos"
+          ),
+        ]),
       ]),
-      script(`
+      Script(`
     // Search functionality
     const searchInput = document.getElementById('search');
-    const methodsContainer = document.getElementById('methods');
     const methods = Array.from(document.querySelectorAll('.method'));
     
     searchInput.addEventListener('input', (e) => {
@@ -252,7 +290,7 @@ module.exports = ({ methodNames, documentation, examples }) => {
         }
       });
     });
-      `)
-    ])
-  ])
-}
+      `),
+    ]),
+  ]);
+};

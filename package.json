@@ -33,6 +33,6 @@
   },
   "homepage": "https://buxlabs.github.io/pure-conditions",
   "devDependencies": {
-    "boxwood": "^1.0.0"
+    "boxwood": "^2.6.0"
   }
 }
