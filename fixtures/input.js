@@ -327,11 +327,11 @@ module.exports = {
     examples: [
       {
         input: [[1, 2]],
-        code: "hasNumber([1, 2])",
+        code: "hasNumbers([1, 2])",
       },
       {
         input: [{ foo: 1, bar: "baz", ban: 2 }],
-        code: 'hasNumber({ foo: 1, bar: "baz", ban: 2 })',
+        code: 'hasNumbers({ foo: 1, bar: "baz", ban: 2 })',
       },
     ],
   },
@@ -531,7 +531,7 @@ module.exports = {
     examples: [
       {
         input: ["lorem ipsum", "lorem"],
-        code: 'includes("lorem ipsum", lorem)',
+        code: 'includes("lorem ipsum", "lorem")',
       },
     ],
   },
@@ -747,33 +747,6 @@ module.exports = {
       },
     ],
   },
-  isMobile: {
-    examples: [
-      {
-        input: [],
-        code: "isMobile()",
-        output: true,
-      },
-    ],
-  },
-  isTablet: {
-    examples: [
-      {
-        input: [],
-        code: "isTablet()",
-        output: true,
-      },
-    ],
-  },
-  isComputer: {
-    examples: [
-      {
-        input: [],
-        code: "isComputer()",
-        output: true,
-      },
-    ],
-  },
   isNaN: {
     examples: [
       {
@@ -801,6 +774,7 @@ module.exports = {
   isError: {
     examples: [
       {
+        input: [new Error("ValidationError")],
         code: 'isError(new Error("ValidationError"))',
         output: true,
       },
@@ -825,6 +799,7 @@ module.exports = {
   isMissing: {
     examples: [
       {
+        input: [null],
         code: "isMissing(null)",
         output: true,
       },
@@ -833,6 +808,7 @@ module.exports = {
   exists: {
     examples: [
       {
+        input: [{}],
         code: "exists({})",
         output: true,
       },
