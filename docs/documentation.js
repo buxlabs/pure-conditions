@@ -517,11 +517,11 @@ module.exports = {
       pl: "Sprawdza czy łańcuch znaków ma rozszerzenie pliku audio.",
     },
   },
-  isVideo: {
+  hasVideoExtension: {
     parameters: ["string"],
     description: {
-      en: "Checks if the string is a name of video file.",
-      pl: "Sprawdza czy łańcuch znaków jest nazwą pliku video.",
+      en: "Checks if the string has a video file extension.",
+      pl: "Sprawdza czy łańcuch znaków ma rozszerzenie pliku video.",
     },
   },
   isImage: {

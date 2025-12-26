@@ -75,7 +75,7 @@ const {
   isIn,
   hasExtension,
   hasAudioExtension,
-  isVideo,
+  hasVideoExtension,
   isImage,
   isEmptyArray,
   isEmptyObject,
@@ -474,11 +474,11 @@ deepStrictEqual(hasAudioExtension("good_quality.flac"), true);
 deepStrictEqual(hasAudioExtension("video.avi"), false);
 deepStrictEqual(hasAudioExtension("document.txt"), false);
 
-deepStrictEqual(isVideo("video.mkv"), true);
-deepStrictEqual(isVideo("funny_gif_with_cuteCaT.gif"), false);
-deepStrictEqual(isVideo("moving_picture_group.mpeg"), true);
-deepStrictEqual(isVideo("good_quality.flac"), false);
-deepStrictEqual(isVideo("file.txt"), false);
+deepStrictEqual(hasVideoExtension("video.mkv"), true);
+deepStrictEqual(hasVideoExtension("funny_gif_with_cuteCaT.gif"), false);
+deepStrictEqual(hasVideoExtension("moving_picture_group.mpeg"), true);
+deepStrictEqual(hasVideoExtension("good_quality.flac"), false);
+deepStrictEqual(hasVideoExtension("file.txt"), false);
 
 deepStrictEqual(isImage("image.png"), true);
 deepStrictEqual(isImage("tagged-image-file-format.tiff"), true);

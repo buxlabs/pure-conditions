@@ -707,11 +707,11 @@ module.exports = {
       },
     ],
   },
-  isVideo: {
+  hasVideoExtension: {
     examples: [
       {
         input: ["foo.mkv"],
-        code: 'isVideo("foo.mkv")',
+        code: 'hasVideoExtension("foo.mkv")',
       },
     ],
   },

@@ -72,7 +72,7 @@ const hasLengthOfAtMost = require("./hasLengthOfAtMost");
 const isIn = require("./isIn");
 const hasExtension = require("./hasExtension");
 const hasAudioExtension = require("./hasAudioExtension");
-const isVideo = require("./isVideo");
+const hasVideoExtension = require("./hasVideoExtension");
 const isImage = require("./isImage");
 const isEmptyArray = require("./isEmptyArray");
 const isEmptyObject = require("./isEmptyObject");
@@ -165,7 +165,7 @@ module.exports = {
   isIn,
   hasExtension,
   hasAudioExtension,
-  isVideo,
+  hasVideoExtension,
   isImage,
   isEmptyArray,
   isEmptyObject,
