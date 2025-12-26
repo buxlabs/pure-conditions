@@ -34,6 +34,13 @@ module.exports = {
       pl: "Sprawdza czy wartość jest zdefiniowana.",
     },
   },
+  isDefined: {
+    parameters: ["value"],
+    description: {
+      en: "Checks if the value is defined (different than undefined).",
+      pl: "Sprawdza czy wartość jest zdefiniowana (różna od undefined).",
+    },
+  },
   isUndefined: {
     parameters: ["value"],
     description: {

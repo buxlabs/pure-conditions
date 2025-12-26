@@ -43,6 +43,22 @@ module.exports = {
       },
     ],
   },
+  isDefined: {
+    examples: [
+      {
+        input: [{ foo: "bar" }],
+        code: 'isDefined({ foo: "bar" })',
+      },
+      {
+        input: [null],
+        code: "isDefined(null)",
+      },
+      {
+        input: [undefined],
+        code: "isDefined(undefined)",
+      },
+    ],
+  },
   isUndefined: {
     examples: [
       {
