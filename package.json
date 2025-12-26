@@ -31,5 +31,8 @@
   "bugs": {
     "url": "https://github.com/buxlabs/pure-conditions/issues"
   },
-  "homepage": "https://buxlabs.github.io/pure-conditions"
+  "homepage": "https://buxlabs.github.io/pure-conditions",
+  "devDependencies": {
+    "boxwood": "^1.0.0"
+  }
 }
