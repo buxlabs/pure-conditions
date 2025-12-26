@@ -510,11 +510,11 @@ module.exports = {
       pl: "Sprawdza czy pierwsza wartość zawiera drugą.",
     },
   },
-  isAudio: {
+  hasAudioExtension: {
     parameters: ["string"],
     description: {
-      en: "Checks if the string is a name of audio file.",
-      pl: "Sprawdza czy łańcuch znaków jest nazwą pliku audio.",
+      en: "Checks if the string has an audio file extension.",
+      pl: "Sprawdza czy łańcuch znaków ma rozszerzenie pliku audio.",
     },
   },
   isVideo: {

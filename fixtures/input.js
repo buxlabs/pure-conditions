@@ -699,11 +699,11 @@ module.exports = {
       },
     ],
   },
-  isAudio: {
+  hasAudioExtension: {
     examples: [
       {
         input: ["foo.mp3"],
-        code: 'isAudio("foo.mp3")',
+        code: 'hasAudioExtension("foo.mp3")',
       },
     ],
   },

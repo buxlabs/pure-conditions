@@ -74,7 +74,7 @@ const {
   hasLengthOfAtMost,
   isIn,
   hasExtension,
-  isAudio,
+  hasAudioExtension,
   isVideo,
   isImage,
   isEmptyArray,
@@ -469,10 +469,10 @@ deepStrictEqual(hasExtension("/components"), false);
 deepStrictEqual(hasExtension(".\\components"), false);
 deepStrictEqual(hasExtension("\\components"), false);
 
-deepStrictEqual(isAudio("song.mp3"), true);
-deepStrictEqual(isAudio("good_quality.flac"), true);
-deepStrictEqual(isAudio("video.avi"), false);
-deepStrictEqual(isAudio("document.txt"), false);
+deepStrictEqual(hasAudioExtension("song.mp3"), true);
+deepStrictEqual(hasAudioExtension("good_quality.flac"), true);
+deepStrictEqual(hasAudioExtension("video.avi"), false);
+deepStrictEqual(hasAudioExtension("document.txt"), false);
 
 deepStrictEqual(isVideo("video.mkv"), true);
 deepStrictEqual(isVideo("funny_gif_with_cuteCaT.gif"), false);
